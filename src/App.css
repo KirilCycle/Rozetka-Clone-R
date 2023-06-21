@@ -1,0 +1,644 @@
+.App {
+  text-align: center;
+
+}
+
+.app-wrapp {
+  scrollbar-gutter: stable;
+  position: relative;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+
+
+
+
+}
+
+
+
+.alert_succes {
+  width: 100%;
+  position: absolute;
+  transition: all 1s;
+  z-index: 50;
+  opacity: 0;
+  padding: 8px;
+  height: auto;
+  color: rgb(84, 84, 84);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgb(141, 141, 255);
+  bottom: 55px;
+}
+
+.alert_error {
+  width: 100%;
+  position: absolute;
+  color: white;
+  transition: all 1s;
+  z-index: 50;
+  opacity: 0;
+  padding: 8px;
+  height: auto;
+  color: rgb(84, 84, 84);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: rgb(255, 121, 121);
+  border-radius: 5px;
+  border: 1px solid rgb(223, 0, 0);
+  bottom: 55px;
+
+
+}
+
+
+
+
+
+/* device slider */
+.swiper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.swiper-slide {
+  display: flex;
+  text-align: center;
+  font-size: 8px;
+  /* Center slide text vertically */
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.app-icons {
+  display: flex;
+  align-items: center;
+}
+
+.vertical {
+  width: 300px;
+  flex-direction: column;
+}
+
+.android {
+  width: 45%;
+}
+
+.apple {
+  width: 45%;
+}
+
+
+
+
+.slider-img-container-banner {
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.slider-img-container-banner img {
+  margin: auto;
+  width: auto;
+  height: auto;
+  object-fit:fill;
+  height: 100%;
+  max-width: 100%;
+}
+
+
+
+
+
+.slider-img-container {
+  width: 100%;
+  height: 700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  object-position: center;
+}
+
+.slider-img-container img {
+  max-width: 70%;
+  max-height: 75%;
+
+}
+
+@media (max-width: 3000px) and (min-width: 1400px) {
+  .slider-img-container img {
+    max-width: 70%;
+    max-height: 110%;
+  
+  }
+  
+} 
+
+@media (max-width: 800px) and (min-width: 320px) {
+
+
+  .slider-img-container {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    object-fit: contain;
+    object-position: none;
+  }
+
+
+
+  .slider-img-container img {
+    max-width: 70%;
+    max-height: 100%;
+    background-color: #2196F3;
+  }
+
+}
+
+
+/* @media (max-width: 1000px) and (min-width: 600px) {
+  
+  .slider-img-container img {
+    max-width: 100%;
+    height: auto;
+    background-color: #2196F3;
+    object-fit: contain;
+  }
+  
+}
+
+
+
+ @media (max-width: 600px) and (min-width: 400px) {
+  
+  .slider-img-container img {
+    max-width: 75%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+} */
+/*
+@media (max-width: 500px) and (min-width: 400px) {
+  .swiper {
+    height: 350px;
+    width: 100%;
+  }
+
+}
+@media (max-width: 400px) and (min-width: 320px) {
+  .swiper {
+    height: 320px;
+    width: 90%;
+  }
+} */
+
+/* device slider */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+.material-symbols-outlined {
+  cursor: pointer;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+/* Links */
+
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+.devices-componets {
+  width: 100%;
+  height: 90.5vh;
+  background-color: rgba(48, 39, 228, 0.15);
+}
+
+
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

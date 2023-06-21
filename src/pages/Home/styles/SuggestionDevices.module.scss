@@ -1,0 +1,99 @@
+@import '../../../styles/colors';
+
+.wrap {
+    margin-top: 50px;
+    width: 97%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+
+    .header_contaier {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-self: center;
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: 'Nanum Gothic', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+
+        }
+
+        span {
+            font-size: 2rem;
+
+            cursor: default;
+            height: 50%;
+            margin-top: 20px;
+            color: yellow;
+
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: 100%;
+        
+
+
+        .deviceItem_wrap {
+            width: 25%;
+            position: relative;
+            height: 370px;
+
+            .small_banner {
+                position: absolute;
+                padding: 2px 7px 2px 7px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: white;
+                background-color: rgb(251, 255, 0);
+                border-radius: 10px;
+                z-index: 5;
+
+            }
+
+            .fethc_btn {
+                width: 100%;
+                background-color: white;
+                color: $links_color;
+                padding: 10px;
+                border-left: 1px solid $light_grey;
+                border-bottom: 1px solid $light_grey;
+                border-right: 1px solid $light_grey;
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+
+        }
+
+        @media (max-width: 1000px) and (min-width: 700px) {
+
+            .deviceItem_wrap {
+                width: 33.333%;
+                height: 370px;
+            }
+        }
+
+        @media (max-width: 700px) and (min-width: 320px) {
+
+            .deviceItem_wrap {
+                width: 50%;
+                height: 370px;
+            }
+        }
+
+
+
+    }
+
+}

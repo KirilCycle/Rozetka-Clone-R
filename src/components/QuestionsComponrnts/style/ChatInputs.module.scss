@@ -1,0 +1,142 @@
+@import '/src/styles/colors'; 
+
+$order__price__block_hgt: 200px;
+$def_padding: 5px;
+$def__padding__mesage: 13px;
+$def_bor_radius: 5px;
+
+
+
+
+.remove-btn {
+    margin-right: 0.5rem;
+  }
+  
+  .item-enter {
+    opacity: 0;
+  }
+  .item-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  .item-exit {
+    opacity: 1;
+  }
+  .item-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
+  
+
+
+
+
+.reply_info_wrap {
+    font-size: 1.1rem;
+    position: relative;
+    font-weight: 500;
+    color: $second_color;
+    z-index: 31;
+    display: flex;
+    border-left: 2px solid $links_color;
+    padding: $def__padding__mesage;
+    background-color: rgb(255, 255, 255);
+
+
+
+    p {
+        cursor: pointer;
+    }
+
+    h2 {
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+}
+
+
+
+.reply_info_wrap>*:last-child {
+    position: absolute;
+    right: 0px;
+    color: $links_color;
+}
+
+.input_block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+   
+
+    %inputs_pattern {
+        background-color: white;
+        margin: 0% auto;
+        width: 90%;
+        padding-left: $def__padding__mesage;
+        height: 50px;
+    }
+
+    .input_wrong  { 
+        border: 2px solid rgb(236, 53, 53);
+        @extend   %inputs_pattern
+       
+    }
+
+    .input_def  {
+        
+
+        border: 2px solid $light_grey;
+        @extend   %inputs_pattern
+
+
+    }
+
+    button {
+        width: 10%;
+        color: white;
+        height: 50px;
+        padding: $def__padding__mesage - 10;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: $links_color;
+        border: 1px solid $links_color;
+        ;
+
+        .spiner {
+            animation: rotation 1s infinite linear;
+            animation-name: spin;
+            animation-duration: 1000ms;
+            width: min-content;
+            display: flex;
+            align-items: center;
+            margin: 0% auto;
+            justify-content: center;
+            height: min-content;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+    }
+
+
+}
+
+span {
+    display: inline;
+    text-align: center;
+    font-size: 17px;
+    background-color: rgba(47, 182, 182, 0);
+}

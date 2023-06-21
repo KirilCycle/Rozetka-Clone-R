@@ -1,0 +1,64 @@
+
+
+@import '../../../styles/colors';
+
+.wrap {
+    width: 70%;
+    border: 1px solid $links_color;
+    border-radius: 5px;
+    height: auto;
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid  rgb(159, 159, 159) ;
+        font-size: 1rem;
+        padding: 10px;
+
+    }
+    .search_content {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid  $light_grey ;
+        font-size: 1rem;
+        padding: 10px;
+
+    
+        .search_input {
+            width: 100%;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            font-size: 1.1rem;
+            padding-left: 3px;
+            border-bottom: 2px solid $links_color;
+        }
+
+        .points_list {
+            height: 200px;
+             li {
+                padding: 10px;
+                cursor: pointer;
+                font-size: 0.9rem;
+
+                &:hover {
+                    background-color: rgb(240, 240, 240);
+                }
+             }
+        }
+
+
+    }
+}
+
+@media (max-width: 700px) {
+    
+    .wrap {
+        width: 100%;
+    }
+
+}

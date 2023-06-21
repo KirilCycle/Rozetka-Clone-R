@@ -1,0 +1,379 @@
+@import '../../../styles/colors';
+
+.wrap {
+  display: flex;
+  top: 47px;
+  position: relative;
+  background-color: white;
+  width: 100%;
+
+
+  @media (min-width: 1700px) {
+    .home_container {
+      margin-top: 30px;
+    }
+  }
+
+
+  .home_container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 77%;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    padding: 10px;
+
+
+    .banner_wrap {
+      width: 100%;
+      margin-top: 10px;
+      display: block;
+
+     
+      max-height: 520px;
+
+    }
+
+
+   
+  }
+
+
+  .category_block {
+    padding-left: 45px;
+    width: 23%;
+    display: flex;
+    height: auto;
+    top: 15px;
+    flex-direction: column;
+    left: 0px;
+    position: relative;
+    z-index: 8;
+
+
+
+
+    .category {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      left: 0;
+      padding-top: 3%;
+      height: 130px;
+     
+      span {
+        display: none;
+      }
+
+      .item {
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+
+        font-size: 1.1rem;
+        margin-top: 10px;
+        color: $links_color;
+
+        &:hover {
+          color: $links_col_2;
+        }
+
+      }
+    }
+  }
+
+  .show_category_btn {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
+
+    .show_category_btn {
+      width: 100%;
+      padding: 10px 20px 10px 20px;
+      display: block;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 10px;
+      background-color: $second_color;
+      display: flex;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      font-size: 1.1rem;
+      color: rgb(255, 255, 255);
+      justify-content: space-between;
+      font-weight: 550;
+
+      &:hover {
+        background-color: $second_color_light;
+        transition: all 300ms;
+      }
+
+      span {
+
+        font-size: 1.5rem;
+        position: absolute;
+        right: 10%;
+
+      }
+
+
+    }
+
+
+  }
+
+  .category_mobile {
+    display: none;
+  }
+
+  .category_mobile_active {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
+
+    .category_block_hided {
+      display: none;
+    }
+
+    .category_block {
+      display: none;
+    }
+
+    %cat_mob {
+      width: 100%;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.239);
+      flex-direction: column;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      position: fixed;
+      z-index: 108;
+      transition: all 500ms;
+
+
+    }
+
+    %category_content_patter {
+
+      width: 20%;
+      height: 100%;
+    }
+
+
+    .category_mobile_active {
+
+      transform: translate(0%);
+
+      @extend %cat_mob;
+
+      .category {
+        width: max-content;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+        height: 100%;
+        z-index: 9;
+        position: absolute;
+        $button_padding: 15px;
+
+        .category_top_header {
+          width: 100%;
+          height: auto;
+          position: absolute;
+          padding: $button_padding ;
+          left: 0px;
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid $light_grey;
+
+
+          h2 {
+            font-size: 1.5rem;
+            color: #2e2e2e;
+            font-weight: 500;
+          }
+
+          .close_btn {
+            color: #2e2e2e;
+
+          }
+
+        }
+
+        .categories_list_wrap {
+          width: 300px;
+          padding: 0px 0px 0px 17px;
+
+          .categories_list {
+            margin-top: 80px;
+
+            li {
+              margin-top: 13px;
+              font-size: 1.2rem;
+              display: flex;
+              flex-direction: row;
+
+              position: relative;
+
+              a {
+                color: #85bbee;
+                cursor: pointer;
+
+                &:hover {
+                  color: $links_color;
+                }
+              }
+
+              span {
+                position: absolute;
+                right: $button_padding;
+                color: gray;
+              }
+
+
+            }
+          }
+
+        }
+      }
+
+      @media (max-width:500px) {
+        .category {
+          width: 100%;
+
+          .categories_list_wrap {
+            width: 100%;
+          }
+
+        }
+
+
+      }
+
+    }
+
+    .category_mobile {
+
+      transform: translate(-120%);
+
+      @extend %cat_mob;
+
+
+
+      .category {
+
+        width: max-content;
+        background-color: rgb(255, 255, 255);
+        display: inline;
+        height: 100%;
+        z-index: 9;
+        position: absolute;
+        $button_padding: 15px;
+
+        .category_top_header {
+          width: 100%;
+          height: auto;
+          position: absolute;
+          padding: $button_padding ;
+          left: 0px;
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid $light_grey;
+
+
+          h2 {
+            font-size: 1.5rem;
+            color: #2e2e2e;
+            font-weight: 500;
+          }
+
+          .close_btn {
+            color: #2e2e2e;
+
+          }
+
+        }
+
+        .categories_list_wrap {
+          width: 300px;
+          padding: 0px 0px 0px 17px;
+
+          .categories_list {
+            margin-top: 80px;
+
+            li {
+              margin-top: 13px;
+              font-size: 1.2rem;
+              display: flex;
+              flex-direction: row;
+
+              position: relative;
+
+              a {
+                color: #85bbee;
+                cursor: pointer;
+
+                &:hover {
+                  color: $links_color;
+                }
+              }
+
+              span {
+                position: absolute;
+                right: $button_padding;
+                color: gray;
+              }
+
+
+            }
+          }
+
+        }
+
+
+
+
+      }
+
+
+
+    }
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 1700px) {
+  .wrap {
+    width: 1700px;
+    margin: 0% auto;
+
+
+  }
+}
+
+@media (max-width: 1000px) {
+  .wrap {
+    top: 50px;
+
+    .home_container {
+      width: 100%;
+    }
+  }
+}

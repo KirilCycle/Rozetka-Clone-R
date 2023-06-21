@@ -1,0 +1,44 @@
+.category {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    height: 160px;
+    display: flex;
+    align-items: end;
+
+    h2 {
+        font-size: 2.5rem;
+       
+
+    }
+
+    @media (max-width: 600px) {
+
+        h2 {
+            font-size: 2.3rem;
+           
+
+        }
+
+    }
+
+    @media (max-width: 500px) {
+
+        h2 {
+            font-size: 2.2rem;
+           
+
+        }
+
+    }
+
+    @media (max-width: 400px) {
+
+        h2 {
+            font-size: 2rem;
+         
+        }
+
+    }
+}
+

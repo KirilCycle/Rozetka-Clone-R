@@ -1,0 +1,71 @@
+@import '../../../styles/colors';
+
+.currier_form {
+    height: auto;
+    width: 70%;
+    border: 1px solid $links_color;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 30px 10px 30px 10px;
+    display: flex;
+    justify-content: space-around;
+
+
+
+    .main {
+        width: 55%;
+        font-size: 1.1rem;
+        color: rgb(0, 0, 0);
+        padding: 7px;
+        border-radius: 5px;
+        border: 1px solid $light_grey;
+
+
+
+        ::placeholder {
+            color: $light_grey;
+        }
+
+    }
+
+    .second {
+        width: 20%;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        color: rgb(0, 0, 0);
+        padding: 7px;
+        border: 1px solid $light_grey;
+
+        &:focus {
+            color: rgb(0, 0, 0);
+        }
+
+        ::placeholder {
+            color: $light_grey;
+        }
+
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .currier_form {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+
+
+        .main {
+            width: 100%;
+        }
+
+        .second {
+            margin-top: 20px;
+            width: 100%;
+
+        }
+
+    }
+}

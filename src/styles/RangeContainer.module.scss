@@ -1,0 +1,25 @@
+.range__slider__conatiner {
+    display: none;
+}
+
+.range__mobile__slider__conatiner {
+    display: none;
+}
+
+/* if device has a touch screen */
+@media (any-pointer: coarse) {
+
+    .range__mobile__slider__conatiner {
+        display: block;
+    }
+}
+
+/* if device has no touch screen */
+@media (any-pointer: fine) {
+
+  
+    .range__slider__conatiner {
+        display: block;
+    }
+
+}

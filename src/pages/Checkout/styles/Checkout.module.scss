@@ -1,0 +1,75 @@
+@import '../../../styles/colors';
+
+.main_container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+
+    .content {
+        width: 60%;
+        $border_inpt: $light_grey;
+
+
+
+        @media (max-width: 600px) {
+            .form_data {
+                flex-direction: column;
+
+                .input_container {
+                    width: 100%;
+                }
+            }
+
+        }
+
+    }
+
+
+    .order_list {
+        width: 100%;
+
+    }
+
+   
+
+}
+
+.info_panel_container {
+    width: 27%;
+    height: 550px;
+    position: sticky;
+    top: 80px;
+    margin-top: 252px;
+}
+
+@media (max-width: 1100px) {
+    .info_panel_container {
+        margin-top: 10px;
+    }  
+}
+
+@media (max-width: 1100px) {
+    .main_container {
+        flex-direction: column;
+
+        .content {
+            width: 100%;
+        }
+
+        .info_panel_container {
+            width: 100%;
+        }
+    }
+}
+
+
+@media (min-width: 1500px) {
+    .main_container {
+        width: 1500px;
+        margin: 0% auto;
+    }
+
+}

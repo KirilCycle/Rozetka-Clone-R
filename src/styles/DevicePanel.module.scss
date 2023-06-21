@@ -1,0 +1,283 @@
+@import 'colors';
+
+$device-wdth: 19%;
+$device-hght: 450px;
+
+
+.wrap {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    padding: 0;
+
+
+    .pages_conatiner {
+        width: 100%;
+        height: 40px;
+        margin-top: 140px;
+        margin-bottom: 40px;
+        padding: 1px;
+        align-items: center;
+        justify-content: center;
+        background: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: row;
+
+        .page__button {
+            padding: 5px 12px 5px 12px;
+            color: rgb(123, 123, 123);
+            border-radius: 5px;
+            border: 1px solid rgb(111, 111, 111);
+            align-items: center;
+            text-align: center;
+            margin: 2px;
+        }
+
+        .page__button_active {
+            padding: 5px 12px 5px 12px;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: $links_color;
+            border: 1px solid $links_color;
+            align-items: center;
+            text-align: center;
+            margin: 2px;
+        }
+
+        .page__button__next {
+           
+            width: auto;
+            padding: 5px 12px 5px 12px;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: $links_color;
+            border: 1px solid $links_color;
+            align-items: center;
+            text-align: center;
+            text-align: center;
+            margin: 2px;
+        }
+
+    }
+
+    .content {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.99);
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        padding-top: 5px;
+        flex-wrap: wrap;
+    }
+
+
+    @media (min-width: 1700px) {
+  
+        .wrap {
+          background-color: rgb(66, 35, 222);
+          width: 1700px;
+        }
+        
+      }
+
+
+    @media (min-width: 1320px) and (max-width: 1500px) {
+        .content {
+
+            .device_item {
+                background-color: rgb(255, 255, 255);
+                height: $device-hght - 50px;
+                ;
+            }
+
+        }
+    }
+
+    @media (min-width: 1250px) and (max-width: 1330px) {
+        .content {
+
+            .device_item {
+                background-color: rgb(255, 255, 255);
+                height: $device-hght - 60px;
+                ;
+            }
+
+        }
+    }
+
+    @media (min-width: 1150px) and (max-width: 1250px) {
+        .content {
+
+            .device_item {
+                width: $device-wdth + 5%;
+                height: $device-hght - 10px;
+                ;
+            }
+
+
+
+        }
+    }
+
+
+    @media (min-width: 950px) and (max-width: 1150px) {
+        .content {
+            .device_item {
+                background-color: rgb(255, 255, 255);
+                height: $device-hght - 50px;
+                width: $device-wdth  + 5%;
+
+                img {
+                    object-fit: cover;
+                    max-width: 80%;
+
+                }
+
+            }
+        }
+    }
+
+    @media (min-width: 740px) and (max-width: 950px) {
+        .content {
+
+            .device_item {
+                .device_item_info_block {
+
+                    .device__text__block {
+
+                        padding: 5px;
+
+                        .name_header {
+                            font-size: 0.9rem;
+                            color: rgb(0, 0, 0);
+                        }
+
+                        p {
+                            font-size: 0.1rem;
+                            color: rgb(82, 82, 82);
+                        }
+                    }
+                }
+
+                width: $device-wdth +13%;
+
+                height: $device-hght - 50px;
+
+                img {
+                    object-fit: cover;
+                    max-width: 80%;
+
+                }
+            }
+        }
+    }
+
+    @media (min-width: 570px) and (max-width: 740px) {
+        .content {
+            .device_item {
+                .image_container {
+                    img {
+                        object-fit: cover;
+                         max-width: 70%;
+                       
+
+                    }
+                }
+
+                .device_item_info_block {
+
+
+                    .device__text__block {
+
+                        padding: 5px;
+
+                        .name_header {
+                            font-size: 0.9rem;
+                            color: rgb(0, 0, 0);
+                        }
+
+                        p {
+                            font-size: 0.1rem;
+                            color: rgb(82, 82, 82);
+                        }
+                    }
+                }
+
+
+                width: $device-wdth +13%;
+                height: $device-hght - 110px;
+
+
+            }
+        }
+    }
+
+    @media (min-width: 390px) and (max-width:570px) {
+        .content {
+            padding: 0px;
+
+            .device_item {
+                width: $device-wdth + 29%;
+                margin: 1px;
+                height: $device-hght - 110px;
+                margin-left: 1px;
+                box-shadow: none;
+
+
+                .image_container {
+
+                    img {
+                        object-fit: cover;
+                        // max-width: 100%;
+                        max-height: 70%;
+
+
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (min-width: 320px) and (max-width:390px) {
+        .content {
+
+            .device_item {
+                width: $device-wdth + 29%;
+                margin: 1px;
+                height: $device-hght - 130px;
+
+
+
+                .device_item_info_block {
+
+                    .device__text__block {
+
+                        padding: 5px;
+
+                        .name_header {
+                            font-size: 0.8rem;
+                            color: rgb(0, 0, 0);
+                        }
+
+                        p {
+                            font-size: 0.1rem;
+                            color: rgb(82, 82, 82);
+                        }
+                    }
+                }
+
+                .image_container {
+
+                    img {
+
+                        max-height: 60%;
+
+
+                    }
+                }
+
+            }
+        }
+    }
+}

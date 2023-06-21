@@ -1,0 +1,10 @@
+.selected_category_wrap {
+    width: 100%;
+    display: block;
+}
+@media (min-width: 1700px) {
+    .selected_category_wrap {
+        width: 1700px;
+        margin: 0% auto;
+    }
+}

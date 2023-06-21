@@ -1,0 +1,30 @@
+.products_container {
+    width: 80vw;
+    height: 90.5vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.brand_bar_conatiner {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.369);
+    background-color: rgb(255, 255, 255);
+
+    .brand_item {
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 10000px;
+        padding: 10px;
+        border: 1px solid rgba(161, 168, 169, 0.988);
+        color: black;
+        margin: 2px;
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.078);
+        }
+    }
+
+
+}

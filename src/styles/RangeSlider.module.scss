@@ -1,0 +1,54 @@
+
+$range-height: 40px;
+
+    .container {
+        width: 100%;
+        height:$range-height + 10px ;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+    .range__container {
+        position: relative;
+        width: 120px;
+        height: $range-height;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+    
+    
+        .range__line {
+            height: 2px;
+            margin-top: 10px;
+            width: 150px;
+            background-color: rgb(156, 156, 156);
+    
+            .range__fild {
+                width: 0%;
+                height: 2px;
+                background-color: rgb(160, 27, 255);
+            }
+    
+        }
+    
+        .slider {
+    
+            position: absolute;
+            cursor: pointer;
+            display: inline-block;
+            top: 2px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            border: 1px solid rgb(72, 72, 72);
+            z-index: 20;
+        }
+    
+    
+    
+    }
+

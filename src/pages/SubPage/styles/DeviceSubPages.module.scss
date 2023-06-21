@@ -1,0 +1,510 @@
+@import '../../../styles/colors';
+
+
+$def__padding__mesage: 13px;
+$def_bor_radius: 5px;
+
+
+.device__slider {
+
+    width: 70%;
+    height: 100%;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+
+
+    .device__slider__description {
+        padding: 5px;
+        color: rgb(109, 106, 106);
+        font-size: 1rem;
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .device__slider {
+        width: 100%;
+        height: 130%;
+        padding: 5px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+
+.characteristics__container {
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    overflow: hidden;
+
+    .char {
+
+        padding: 30px;
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: gray;
+        }
+    }
+
+}
+
+//
+// @media (max-width: 800px) {}
+
+$order__price__block_hgt: 200px;
+$def_padding: 5px;
+
+
+.main__questions__wrap {
+    width: 50%;
+    padding: 10px 10px 5px 30px;
+
+
+    .input_container {
+
+        background-color: white;
+        padding: $def_padding;
+        width: 100%;
+        height: 100px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        z-index: 30;
+        bottom: 0%;
+        height: auto;
+
+        .reply_info_wrap {
+            font-size: 1.1rem;
+            position: relative;
+            font-weight: 500;
+            color: $second_color;
+            z-index: 31;
+            display: flex;
+            border-left: 2px solid $links_color;
+            padding: $def__padding__mesage;
+            background-color: rgb(255, 255, 255);
+
+
+
+            p {
+                cursor: pointer;
+            }
+
+            h2 {
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+        }
+
+
+
+        .reply_info_wrap>*:last-child {
+            position: absolute;
+            right: 0px;
+            color: $links_color;
+        }
+
+        .input_block {
+
+            display: flex;
+
+
+            input {
+                background-color: white;
+                border: 2px solid $light_grey;
+                margin: 0% auto;
+                width: 90%;
+                padding-left: $def__padding__mesage;
+                height: 50px;
+
+                &::before {
+                    content: 'you should enter more than 3 symbol ';
+                    background-color: rgb(255, 255, 255);
+                    font-size: 1.2rem;
+                    color: red;
+                }
+
+            }
+
+            button {
+                width: 10%;
+                color: white;
+                height: 50px;
+                padding: $def__padding__mesage - 10;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                background-color: $links_color;
+                border: 1px solid $links_color;
+                ;
+
+                .spiner {
+                    animation: rotation 1s infinite linear;
+                    animation-name: spin;
+                    animation-duration: 1000ms;
+                    width: min-content;
+                    display: flex;
+                    align-items: center;
+                    margin: 0% auto;
+                    justify-content: center;
+                    height: min-content;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
+
+
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+
+            }
+
+
+        }
+
+        span {
+            display: inline;
+            text-align: center;
+            font-size: 17px;
+            background-color: rgba(47, 182, 182, 0);
+        }
+
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    .input_container {
+        bottom: 57px;
+    }
+}
+
+.questions__wrap {
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+
+
+
+    .questions__container {
+        height: auto;
+        width: 100%;
+
+        .loading_container {
+            width: 100%;
+            height: 700px;
+            background-color: rgb(255, 255, 255);
+            display: block;
+        }
+
+
+        .chat__container {
+            width: 100%;
+            padding: $def_padding;
+            display: block;
+
+            %buttons_pagination_patern_ {
+                margin: 5px;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: rgb(140, 140, 140);
+                padding: 5px;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .top_button {
+
+
+                span {
+
+                    font-size: 1.7rem;
+                    color: $links_color;
+                    margin: 0% auto;
+                }
+
+                @extend %buttons_pagination_patern_;
+            }
+
+            .bottom_button {
+                span {
+
+                    font-size: 1.7rem;
+                    color: $links_color;
+                    margin: 0% auto;
+                }
+
+                @extend %buttons_pagination_patern_;
+
+            }
+
+
+            .message {
+                border: 1px solid $light_grey;
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+                min-height: 50px;
+                font-size: 1.2rem;
+                margin-top: 37px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                word-wrap: break-word;
+                white-space: pre-wrap;
+                border-radius: 7px;
+
+                h3 {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
+
+                .body__container {
+                    width: 100%;
+
+                    background-color: rgb(255, 255, 255);
+                    font-size: 1rem;
+                    padding: $def__padding__mesage;
+
+                }
+
+                .user__container {
+                    height: 50px;
+                    border-top-left-radius: $def_bor_radius + 7;
+                    border-top-right-radius: $def_bor_radius + 7;
+                    padding: $def__padding__mesage;
+                    width: 100%;
+                    background-color: rgb(255, 255, 255);
+                    border-bottom: 1px solid $light_grey;
+
+                }
+
+
+
+                .control_block {
+                    width: 100%;
+                    display: flex;
+                    background-color: rgb(255, 255, 255);
+                    padding: $def__padding__mesage;
+                    border-bottom-left-radius: $def_bor_radius + 7;
+                    border-bottom-right-radius: $def_bor_radius + 7;
+
+                    button {
+                        font-size: 1rem;
+                        color: blue;
+                        font-weight: 600;
+
+                        span {
+                            font-size: 1rem;
+                            display: inline-block;
+
+                        }
+
+                    }
+
+                    p {
+                        margin-left: 20px;
+                        cursor: pointer;
+                        color: rgb(106, 106, 242);
+                    }
+                }
+
+
+                %delete_span__patter {
+                    position: absolute;
+                    left: 9px;
+                    top: 25%;
+                }
+
+                %message__controll__pattern {
+                    width: 120px;
+                    height: 50px;
+                    color: rgb(171, 171, 171);
+                    position: absolute;
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                    z-index: 20;
+                    padding: 10px 25px 10px 25px;
+                    background-color: rgb(255, 255, 255);
+                    right: 0px;
+                    text-align: center;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+
+                .message__control__block {
+                    width: 5%;
+                    height: max-content;
+                    position: absolute;
+                    top: 5px;
+                    right: 0px;
+
+                    display: flex;
+                    flex-direction: row;
+                    align-self: center;
+                    color: gray;
+                    border-top-right-radius: $def_bor_radius + 5;
+                    border-top-left-radius: $def_bor_radius + 5;
+                    justify-content: center;
+
+                    .message__controll {
+
+
+                        @extend %message__controll__pattern;
+
+
+                        span {
+
+                            @extend %delete_span__patter;
+
+                        }
+                    }
+
+
+                }
+
+            }
+
+            .replyes_block {
+                height: auto;
+                background-color: rgb(255, 255, 255);
+                width: 90%;
+                min-height: 50px;
+                padding-bottom: $def__padding__mesage;
+                font-size: 1.2rem;
+                border-left: 2px solid $light_grey;
+
+                h3 {
+                    color: #b1b1b1;
+                    cursor: pointer;
+                    margin-left: $def__padding__mesage;
+
+                    span {
+
+                        font-size: 1.1rem;
+                    }
+
+                    &:hover {
+                        color: gray;
+                    }
+                }
+
+                .reply__message {
+                    background-color: rgb(255, 255, 255);
+                    margin: 20px 0px 20px 10px;
+                    border-radius: $def_bor_radius;
+                    border: 1px solid rgb(222, 222, 222);
+
+                    .reply__message__user {
+                        width: 100%;
+                        font-weight: 500;
+                        padding: $def__padding__mesage;
+                        border-top-right-radius: $def_bor_radius;
+                        border-top-left-radius: $def_bor_radius;
+                        background-color: rgb(255, 255, 255);
+                        border-bottom: 1px solid $light_grey;
+                    }
+
+                    .reply__body {
+                        width: 100%;
+                        padding: $def__padding__mesage;
+                        border-bottom-left-radius: $def_bor_radius;
+                        border-bottom-right-radius: $def_bor_radius;
+
+
+                    }
+
+                    .message__control__block__reply {
+                        position: relative;
+
+                        .ss {
+                            span {
+                                position: absolute;
+                                right: 0px;
+                                top: 5px;
+                                color: rgb(156, 156, 156);
+
+                            }
+                        }
+
+
+
+
+                        .message__controll__reply {
+                            @extend %message__controll__pattern;
+
+
+                            button {
+
+                                span {
+                                    @extend %delete_span__patter
+                                }
+
+                            }
+
+
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+    }
+
+}
+
+
+
+
+@media (max-width: 800px) {
+    .device__slider {
+        width: 100%;
+        height: 700px;
+
+    }
+
+    .main__questions__wrap {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .characteristics__container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .questions__container {
+        width: 100%;
+        height: 700px;
+        overflow-y: auto;
+
+    }
+}

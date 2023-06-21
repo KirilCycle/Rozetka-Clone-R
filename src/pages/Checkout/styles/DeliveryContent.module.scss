@@ -1,0 +1,159 @@
+@import '../../../styles/colors';
+
+.delivery {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 200px;
+
+
+  .del_header {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+  }
+
+  .deliveries__city {
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid $light_grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+
+    span {
+      font-size: 1.9rem;
+      color: $links_color;
+    }
+
+    .chevron_right_wrap {
+      position: absolute;
+      right: 10px;
+
+      span {
+        color: gray;
+      }
+    }
+
+    .city_info {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      margin-left: 20px;
+
+      p {
+        font-size: 0.9rem;
+        color: gray;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+    }
+
+  }
+
+  .deliveries_variety_btns {
+
+    margin-top: 30px;
+    margin-left: 30px;
+
+
+
+    label {
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    .radio_container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin-top: 40px;
+    }
+
+    /* Hide the browser's default radio button */
+    .radio_container input {
+
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom radio button */
+    .radio_checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      border: 1px solid $light_grey;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .radio_container:hover input~.radio_checkmark {
+      border: 1px solid gray;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .radio_container input:checked~.radio_checkmark {
+      background-color: #2196F3;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .radio_checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .radio_container input:checked~.radio_checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .radio_container .radio_checkmark:after {
+      top: 3px;
+      left: 3px;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+
+
+
+  @media (max-width: 700px) {
+
+    .deliveries_variety_btns {
+
+      margin-top: 30px;
+      margin-left: 0px;
+    }
+
+  }
+
+}
+
+@media (max-width: 1100px) {
+  .delivery { 
+    margin-bottom: 20px;
+  }
+}

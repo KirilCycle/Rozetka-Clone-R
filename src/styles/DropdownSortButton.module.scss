@@ -1,0 +1,239 @@
+
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    position: -webkit-sticky;
+    position: sticky;
+    height: auto;
+    border-bottom: 1px solid rgba(210, 210, 210, 0.975);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    position: sticky;
+    top: 60px;
+    z-index: 60;
+    /* The container <div> - needed to position the dropdown content */
+  }
+  
+  @media (min-width: 1700px) {
+    .container {
+      top: 70px;
+    }
+  }
+  
+  
+  .filter__button {
+    display: none;
+  }
+  
+  
+  .dropbtn {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    font-size: 12px;
+    border: 1px black solid;
+    cursor: pointer;
+    width: 250px;
+    height: 30px
+  }
+  .dropbtn span {
+    font-size: 18px;
+    margin-left: 3px;
+    color: rgb(48, 172, 255);;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #ececec;
+    width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 12;
+    font-size: 12px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown_content a:hover {
+    background-color: #fcfcfc
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown_content {
+    display: block;
+  
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    color: white;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 880px) {
+  
+  .dropdown_limit {
+    display: none;
+  }
+  }
+  
+  
+  
+  
+  
+  @media (max-width: 880px) and (min-width: 440px) {
+  
+    
+  
+    .filter__button {
+      display: block;
+    }
+  
+    .container {
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+  
+    }
+  
+  
+  
+    .filter__button {
+  
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      border: 2px solid rgb(198, 198, 198);
+      padding: 10px;
+      font-size: 12px;
+      padding: 10px 10px 10px 10px;
+      color: rgb(166, 166, 166);
+      cursor: pointer;
+      font-size: 0.9rem;
+      width: 100px;
+      height: 30px;
+    }
+  
+    .filter__button span {
+      font-size: 16px;
+    }
+  
+    .filter__button:hover {
+      border: 2px solid rgb(143, 143, 143);
+    }
+  
+  
+    .dropbtn {
+      width: 200px;
+      height: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  
+    .dropdown_content {
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 440px) {
+    .filter__button {
+      display: block;
+    }
+  
+    .container {
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      justify-content: space-around;
+      flex-direction: row;
+  
+    }
+  
+  
+    .filter__button {
+  
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      border: 2px solid rgb(198, 198, 198);
+      color: white;
+      padding: 10px;
+      font-size: 12px;
+      padding: 10px 10px 10px 10px;
+      color: rgb(61, 61, 61);
+      cursor: pointer;
+      font-size: 0.9rem;
+      width: 120px;
+      height: 30px;
+    }
+  
+    .filter__button:hover {
+      border: 2px solid rgb(143, 143, 143);
+    }
+  
+  
+  
+    .dropbtn {
+      width: 160px;
+      height: 30px;
+    }
+  
+    .dropdown_content {
+      width: 150px;
+    }
+  }

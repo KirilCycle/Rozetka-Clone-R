@@ -1,0 +1,23 @@
+.error_container {
+    width: 100%;
+    height: auto;
+    margin: 0% auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+  
+
+    h2 {
+        font-weight: 500;
+        color: gray;
+        font-size: 1.5rem;
+
+    }
+
+    span {
+        font-size: 3rem;
+        color: red;
+       
+    }
+
+}

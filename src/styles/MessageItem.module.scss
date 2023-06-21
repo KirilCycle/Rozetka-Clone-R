@@ -1,0 +1,219 @@
+@import 'colors'; 
+
+
+$def__padding__mesage: 13px;
+$def_bor_radius: 5px;
+
+.deleted {
+    display: none;
+}
+
+.message {
+    border: 1px solid $light_grey;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    min-height: 50px;
+    font-size: 1.2rem;
+    margin-top: 37px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border-radius: 7px;
+
+    h3 {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    .body__container {
+        width: 100%;
+
+        background-color: rgb(255, 255, 255);
+        font-size: 1rem;
+        padding: $def__padding__mesage;
+
+    }
+
+    .user__container {
+        height: 50px;
+        border-top-left-radius: $def_bor_radius + 7;
+        border-top-right-radius: $def_bor_radius + 7;
+        padding: $def__padding__mesage;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-bottom: 1px solid $light_grey;
+
+    }
+
+
+
+    .control_block {
+        width: 100%;
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        padding: $def__padding__mesage;
+        border-bottom-left-radius: $def_bor_radius + 7;
+        border-bottom-right-radius: $def_bor_radius + 7;
+
+        button {
+            font-size: 1rem;
+            color: blue;
+            font-weight: 600;
+
+            span {
+                font-size: 1rem;
+                display: inline-block;
+
+            }
+
+        }
+
+        p {
+            margin-left: 20px;
+            cursor: pointer;
+            color: rgb(106, 106, 242);
+        }
+    }
+
+
+    %delete_span__patter {
+        position: absolute;
+        left: 9px;
+        top: 25%;
+    }
+
+    %message__controll__pattern {
+        width: 120px;
+        height: 50px;
+        color: rgb(171, 171, 171);
+        position: absolute;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        z-index: 20;
+        padding: 10px 25px 10px 25px;
+        background-color: rgb(255, 255, 255);
+        right: 0px;
+        text-align: center;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    .message__control__block {
+        width: 5%;
+        height: max-content;
+        position: absolute;
+        top: 5px;
+        right: 0px;
+
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        color: gray;
+        border-top-right-radius: $def_bor_radius + 5;
+        border-top-left-radius: $def_bor_radius + 5;
+        justify-content: center;
+
+        .message__controll {
+
+
+            @extend %message__controll__pattern;
+
+
+            span {
+
+                @extend %delete_span__patter;
+
+            }
+        }
+
+
+    }
+
+}
+
+.replyes_block {
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    min-height: 50px;
+    padding-bottom: $def__padding__mesage;
+    font-size: 1.2rem;
+    border-left: 2px solid $light_grey;
+
+    h3 {
+        color: #b1b1b1;
+        cursor: pointer;
+        margin-left: $def__padding__mesage;
+
+        span {
+
+            font-size: 1.1rem;
+        }
+
+        &:hover {
+            color: gray;
+        }
+    }
+
+    .reply__message {
+        background-color: rgb(255, 255, 255);
+        margin: 20px 0px 20px 10px;
+        border-radius: $def_bor_radius;
+        border: 1px solid rgb(222, 222, 222);
+
+        .reply__message__user {
+            width: 100%;
+            font-weight: 500;
+            padding: $def__padding__mesage;
+            border-top-right-radius: $def_bor_radius;
+            border-top-left-radius: $def_bor_radius;
+            background-color: rgb(255, 255, 255);
+            border-bottom: 1px solid $light_grey;
+        }
+
+        .reply__body {
+            width: 100%;
+            padding: $def__padding__mesage;
+            border-bottom-left-radius: $def_bor_radius;
+            border-bottom-right-radius: $def_bor_radius;
+
+
+        }
+
+        .message__control__block__reply {
+            position: relative;
+
+            .ss {
+                span {
+                    position: absolute;
+                    right: 0px;
+                    top: 5px;
+                    color: rgb(156, 156, 156);
+
+                }
+            }
+
+
+
+
+            .message__controll__reply {
+                @extend %message__controll__pattern;
+
+
+                button {
+
+                    span {
+                        @extend %delete_span__patter
+                    }
+
+                }
+
+
+            }
+
+        }
+    }
+}

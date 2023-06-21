@@ -1,0 +1,496 @@
+@import 'colors';
+
+$device-wdth: 20%;
+$device-hght: 530px;
+
+
+
+.device_item {
+    width: $device-wdth;
+    height: $device-hght;
+    background-color: white;
+    display: block;
+    border-right: 1px solid $light_grey;
+    position: relative;
+
+
+
+    .discount_alert {
+        position: absolute;
+        padding: 2px 7px 2px 7px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: white;
+        background-color: rgb(255, 64, 0);
+        border-radius: 10px;
+    }
+
+    .image_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        height: 70%;
+        cursor: pointer;
+
+        img {
+            max-width: 86%;
+            max-height: 78%;
+        }
+    }
+
+    .device_item_info_block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(223, 223, 223);
+        height: 30%;
+
+
+        .device__text__block {
+            width: 100%;
+            display: flex;
+            overflow-wrap: break-word;
+            justify-content: center;
+            padding: 0px 5px 0px 5px;
+            height: 50%;
+            background-color: rgb(255, 255, 255);
+
+            .name_header {
+                font-size: 0.9rem;
+                color: black;
+                overflow-wrap: break-word;
+                cursor: pointer;
+
+                &:hover {
+                    color: rgb(255, 21, 9);
+                }
+            }
+        }
+
+        .ul_colors_list {
+            display: flex;
+            background-color: white;
+            flex-direction: row;
+           
+            padding: 0px 5px 0px 5px;
+        }
+
+        .price_block {
+
+          
+            h4 {
+                font-size: 1rem;
+                position: absolute;
+                bottom: 42px;
+                color: gray;
+                text-decoration: line-through;
+            }
+
+
+
+            .discount_font {
+                position: relative;
+                font-size: 1.4rem;
+                color: rgb(255, 0, 0);
+            }
+
+            h2 {
+                position: relative;
+                font-size: 1.4rem;
+                color: rgb(30, 30, 30);
+            }
+        }
+
+
+        .deivce__item__button__block {
+            width: 100%;
+            display: flex;
+            padding: 5px;
+            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            height: 50%;
+
+
+            .basket_included {
+                span {
+                    color: $links_color;
+                    font-size: 1.6rem;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
+
+@media (min-width: 1320px) and (max-width: 1500px) {
+
+
+    .device_item {
+        background-color: rgb(255, 255, 255);
+        height: $device-hght - 50px;
+        ;
+    }
+
+}
+
+
+@media (min-width: 1250px) and (max-width: 1330px) {
+
+    .device_item {
+        background-color: rgb(255, 255, 255);
+        height: $device-hght - 60px;
+    }
+
+}
+
+@media (min-width: 1150px) and (max-width: 1250px) {
+
+    .device_item {
+        width: $device-wdth + 5%;
+        height: $device-hght - 30px;
+    }
+
+}
+
+
+@media (min-width: 950px) and (max-width: 1150px) {
+
+    .device_item {
+        background-color: rgb(255, 255, 255);
+        height: $device-hght - 90px;
+        width: $device-wdth + 13.3%;
+
+        img {
+            object-fit: cover;
+            max-width: 80%;
+
+        }
+
+    }
+
+}
+
+
+@media (max-width: 740px) {
+
+    .device_item {
+        .discount_alert {
+            position: absolute;
+            padding: 1px 6px 1px 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 48, 29);
+            border-radius: 10px;
+
+        }
+    }
+
+}
+
+@media (min-width: 740px) and (max-width: 950px) {
+
+
+    .device_item {
+
+
+
+        .device_item_info_block {
+
+            .device__text__block {
+
+                padding: 5px;
+
+                .name_header {
+                    font-size: 0.9rem;
+                    color: rgb(0, 0, 0);
+                }
+
+                p {
+                    font-size: 0.1rem;
+                    color: rgb(82, 82, 82);
+                }
+            }
+        }
+
+        width: $device-wdth +13%;
+
+        height: $device-hght - 50px;
+
+        img {
+            object-fit: cover;
+            max-width: 80%;
+
+        }
+    }
+
+}
+
+@media (min-width: 570px) and (max-width: 740px) {
+
+    .device_item {
+        .image_container {
+            img {
+                object-fit: cover;
+                max-width: 70%;
+
+
+            }
+        }
+
+        .device_item_info_block {
+
+
+            .device__text__block {
+
+                padding: 5px;
+
+                .name_header {
+                    font-size: 0.9rem;
+                    color: rgb(0, 0, 0);
+                }
+
+                p {
+                    font-size: 0.1rem;
+                    color: rgb(82, 82, 82);
+                }
+            }
+        }
+
+
+        width: $device-wdth +30%;
+        height: $device-hght - 80px;
+
+
+    }
+}
+
+
+@media (min-width: 390px) and (max-width:570px) {
+
+
+    .device_item {
+        width: $device-wdth + 29%;
+        margin: 1px;
+        height: $device-hght - 110px;
+        margin-left: 1px;
+        box-shadow: none;
+
+
+        .image_container {
+
+            img {
+                object-fit: cover;
+                // max-width: 100%;
+                max-height: 70%;
+
+
+            }
+        }
+
+        .price_block {
+
+          
+            h4 {
+                font-size: 1rem;
+                position: absolute;
+                bottom: 40px;
+                color: gray;
+                text-decoration: line-through;
+            }
+
+
+
+            .discount_font {
+                position: relative;
+                font-size: 1.4rem;
+                color: rgb(255, 0, 0);
+            }
+
+            h2 {
+                position: relative;
+                font-size: 1.4rem;
+                color: rgb(30, 30, 30);
+            }
+        }
+
+    }
+}
+
+
+@media (min-width: 320px) and (max-width:390px) {
+
+    .device_item {
+        width: $device-wdth + 29%;
+        margin: 1px;
+        height: $device-hght - 130px;
+
+
+
+        .device_item_info_block {
+
+            .device__text__block {
+
+                padding: 5px;
+
+                .name_header {
+                    font-size: 0.8rem;
+                    color: rgb(0, 0, 0);
+                }
+
+                p {
+                    font-size: 0.1rem;
+                    color: rgb(82, 82, 82);
+                }
+            }
+        }
+
+        .image_container {
+
+            img {
+
+                max-height: 60%;
+
+
+            }
+        }
+
+    }
+
+}
+
+
+
+
+$blue: rgb(0, 30, 255);
+$green: rgb(0, 136, 30);
+$silver: rgb(151, 151, 151);
+$purple: rgb(140, 0, 255);
+$pink: rgb(247, 0, 255);
+$black: rgb(0, 0, 0);
+$white: white;
+$red: red;
+$teal: rgb(0, 192, 189);
+
+%color__item {
+    width: 18px;
+    height: 18px;
+    margin: 1px;
+    display: block;
+    border-radius: 13px;
+    margin: 0px 3px 0px 3px;
+}
+
+%color__item__active {
+
+    transform: scale(1.1);
+    @extend %color__item
+}
+
+
+.color__item__teal {
+    background-color: $teal;
+    border: 1px solid rgb(0, 73, 87);
+    @extend %color__item
+}
+
+.color__item__teal__active {
+    background-color: $teal;
+    border: 1px solid rgb(0, 73, 87);
+    @extend %color__item__active
+}
+
+.color__item__purple {
+    background-color: $purple;
+    border: 1px solid rgb(90, 0, 90);
+    @extend %color__item
+}
+
+.color__item__purple__active {
+    background-color: $purple;
+    border: 1px solid rgb(90, 0, 90);
+    @extend %color__item__active
+}
+
+.color__item__red {
+    background-color: $red;
+    border: 1px solid rgb(179, 0, 0);
+    @extend %color__item
+}
+
+.color__item__red__active {
+    background-color: $red;
+    border: 1px solid rgb(179, 0, 0);
+    @extend %color__item__active
+}
+
+
+.color__item__blue {
+    background-color: $blue;
+    border: 1px solid rgb(23, 0, 128);
+    @extend %color__item
+}
+
+.color__item__blue__active {
+    background-color: $blue;
+    border: 1px solid rgb(23, 0, 128);
+    @extend %color__item__active
+}
+
+
+.color__item__green {
+    background-color: $green;
+    border: 1px solid rgb(0, 143, 33);
+    @extend %color__item
+}
+
+.color__item__green__active {
+    background-color: $green;
+    border: 1px solid rgb(0, 143, 33);
+    @extend %color__item__active
+}
+
+
+.color__item__black {
+    background-color: $black;
+    border: 1px solid rgb(25, 25, 25);
+    @extend %color__item
+}
+
+.color__item__black__active {
+    background-color: $black;
+    border: 1px solid rgb(25, 25, 25);
+    @extend %color__item__active
+}
+
+
+
+
+.device_item_hovered {
+    @extend .device_item;
+    z-index: 40;
+    box-shadow: rgba(4, 4, 4, 0.343) 0px 48px 100px 0px;
+   
+
+    .more_info {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        color: #000;
+        z-index: 100;
+        height: min-content;
+        font-size: 0.9rem;
+        padding: 15px;
+        color: gray;
+    
+    }
+
+
+}
