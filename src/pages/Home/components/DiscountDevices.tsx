@@ -1,44 +1,46 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState, lazy, Suspense, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-// import DiscountDevicesContent from './DiscountDevicesContent'
-import c from '../styles/DevicesSlider.module.scss'
-
+import c from '../styles/DevicesSlider.module.scss';
 
 const DiscountDevicesContent = lazy(() => import('./DiscountDevicesContent'));
 
 export default function DiscountDevices() {
-
-
-    const [v, setV] = React.useState<boolean>(false)
-    const [v2, setV2] = React.useState<boolean>(false)
-
     const { ref, inView } = useInView({
-        threshold: 0.9,
-        triggerOnce: true,
+        threshold: 1,
+        triggerOnce: true
+
     });
 
+    const [v, setV] = useState(false);
+    const [isComponentLoaded, setComponentLoaded] = React.useState(false);
 
-    React.useEffect(() => {
-        if (!v && inView) {
-            setTimeout(() => {
-                setV2(true)
-            },4000)
-            console.log('XXXXXXXXXXXXX FFFF wad wadwa dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd dddddddddddddddddddddddddddddddddddddddddddddddddddd dddddddddddddddddddddddddddddddddddddddddddddddddddd     dddddddddddddddddddddddddddddddddddddddddddddddddddd        wadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddFFFFFFF');
-            setV(true)
-        }
-    }, [inView])
+    useEffect(() => {
+       if (inView) {
+           setV(inView)
+           alert('pizda')
+           handleClick();
+       }
+    }, [inView]);
+
+    useEffect(() => {
+        console.log(v);
+    }, [v]);
+
+
+    const handleClick = () => {
+        setComponentLoaded(true);
+      };
 
     return (
         <>
-            <div ref={ref} ></div>
+            <div ref={ref} className={c.sus}>
+                <p>{JSON.stringify(v)}</p>
 
-            <Suspense key={'sus'} fallback={<div>Loading...</div>}>
-                {
-                    v2 &&
-                    <DiscountDevicesContent />
-                }
-            </Suspense>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {isComponentLoaded && <DiscountDevicesContent />}
+                </Suspense>
+
+            </div>
         </>
-    )
+    );
 }
-
