@@ -1,46 +1,84 @@
-import axios from 'axios'
+// import axios from 'axios'
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
-import { SERVER_URL } from '../../../consts'
-import { DeviceI } from '../../../models/models'
-import { fetchSuggestion, fetchSuggestionNext } from '../../../store/features/Suggestions.SLice'
-import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+// import { SERVER_URL } from '../../../consts'
+// import { DeviceI } from '../../../models/models'
+// import { fetchSuggestion, fetchSuggestionNext } from '../../../store/features/Suggestions.SLice'
+// import { useAppDispatch, useAppSelector } from '../../../store/hooks'
 import c from '../styles/SuggestionDevices.module.scss'
-import ViewedeDeviceItem from './DeviceFromSlider'
-import Loader from '../../../components/Loader'
+// import ViewedeDeviceItem from './DeviceFromSlider'
+// import Loader from '../../../components/Loader'
+import { useState, lazy, Suspense, useEffect } from 'react';
+
 
 export default function SuggestionDevices() {
+  const TestHuy = lazy(() => import('./TestHuy'));
 
-  const [count, setCount] = React.useState<number>(2)
-  const { suggestionDevices, loading } = useAppSelector(state => state.suggetsionsReducer)
-  const [wasObserver, setWasObserver] = React.useState<boolean>(false)
+
+  const { ref, inView } = useInView({
+    threshold: 1,
+    triggerOnce: true
+
+});
+
+const [v, setV] = useState(false);
+const [isComponentLoaded, setComponentLoaded] = React.useState(false);
+
+useEffect(() => {
+   if (inView) {
+       setV(inView)
+       alert('pizdaTEST')
+       handleClick();
+   }
+}, [inView]);
+
+useEffect(() => {
+    console.log(v);
+}, [v]);
+
+
+const handleClick = () => {
+    setComponentLoaded(true);
+  };
+
+  // const [count, setCount] = React.useState<number>(2)
+  // const { suggestionDevices, loading } = useAppSelector(state => state.suggetsionsReducer)
+  // const [wasObserver, setWasObserver] = React.useState<boolean>(false)
 
  
 
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
 
-  console.log('SUGGESTION DEVICE RENDER');
+  // console.log('SUGGESTION DEVICE RENDER');
 
-  React.useEffect(() => {
+  // React.useEffect(() => {
 
    
 
-      dispatch(fetchSuggestion())
-      setWasObserver(true)
+  //     dispatch(fetchSuggestion())
+  //     setWasObserver(true)
     
 
-  }, [])
+  // }, [])
 
-  function fetchNextPart() {
+  // function fetchNextPart() {
 
-    dispatch(fetchSuggestionNext(count))
-    setCount(prev => prev + 1)
+  //   dispatch(fetchSuggestionNext(count))
+  //   setCount(prev => prev + 1)
 
-  }
+  // }
 
   return (
     <>
-      {wasObserver ?
+      
+            <div className={c.lazy_wrap} ref={ref} >
+                <Suspense fallback={<div>Loading...</div>}>
+                    {isComponentLoaded && <TestHuy/>}
+                </Suspense>
+            </div>
+     
+
+      {/* {wasObserver ?
         null
         :
         <div className={c.devices_observer}  >OBSERVER</div>
@@ -85,7 +123,7 @@ export default function SuggestionDevices() {
         :
         null
 
-      }
+      } */}
     </>
   )
 

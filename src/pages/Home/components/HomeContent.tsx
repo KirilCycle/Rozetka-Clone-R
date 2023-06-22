@@ -1,6 +1,7 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { useInView } from 'react-intersection-observer';
 import DiscountDevices from './DiscountDevices';
+import SuggestionDevices from './SuggestionDevices';
 
 export default function HomeContent() {
   // const [v, setV] = useState(false);
@@ -29,9 +30,10 @@ export default function HomeContent() {
       </Suspense> */}
       
       <DiscountDevices/>
+     
       
       
-      {/* <SuggestionDevices/> */}
+      <SuggestionDevices/>
       {/* <RecentlyViewedDevices/> */}
 
       {/* <Suspense key={'susw'} fallback={<div>Loading...</div>}>

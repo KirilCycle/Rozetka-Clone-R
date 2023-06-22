@@ -34,12 +34,9 @@ export default function DiscountDevices() {
     return (
         <>
             <div ref={ref} className={c.sus}>
-                <p>{JSON.stringify(v)}</p>
-
                 <Suspense fallback={<div>Loading...</div>}>
                     {isComponentLoaded && <DiscountDevicesContent />}
                 </Suspense>
-
             </div>
         </>
     );

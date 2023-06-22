@@ -16,6 +16,11 @@ import { Link } from "react-router-dom";
 
 export default function BannerSlider() {
 
+    function handleImageLoad (event: React.SyntheticEvent<HTMLImageElement>) {
+        const { naturalHeight } = event.currentTarget;
+        console.log(naturalHeight, 'WOWWWWW');
+    }
+
     return (
         <>
             <Swiper
@@ -35,7 +40,7 @@ export default function BannerSlider() {
                 <SwiperSlide>
                     <div className='slider-img-container-banner'>
                         <Link to="/laptops/11">
-                            <img src={'https://i0.wp.com/store.ave.com.bn/wp-content/uploads/2022/07/MacBook_Air_M2_Web_Banner-1400x700-Now-Available.png?fit=1400%2C700&ssl=1'} />
+                            <img  onLoad={handleImageLoad}  src={'https://i0.wp.com/store.ave.com.bn/wp-content/uploads/2022/07/MacBook_Air_M2_Web_Banner-1400x700-Now-Available.png?fit=1400%2C700&ssl=1'} />
                         </Link>
                     </div>
                 </SwiperSlide>
