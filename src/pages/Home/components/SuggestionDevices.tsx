@@ -15,9 +15,7 @@ export default function SuggestionDevices() {
   const { suggestionDevices, loading } = useAppSelector(state => state.suggetsionsReducer)
   const [wasObserver, setWasObserver] = React.useState<boolean>(false)
 
-  const { ref, inView } = useInView({
-    threshold: 1
-  })
+ 
 
   const dispatch = useAppDispatch()
 
@@ -25,13 +23,13 @@ export default function SuggestionDevices() {
 
   React.useEffect(() => {
 
-    if (inView) {
+   
 
       dispatch(fetchSuggestion())
       setWasObserver(true)
-    }
+    
 
-  }, [inView])
+  }, [])
 
   function fetchNextPart() {
 
@@ -45,7 +43,7 @@ export default function SuggestionDevices() {
       {wasObserver ?
         null
         :
-        <div className={c.devices_observer} ref={ref} >OBSERVER</div>
+        <div className={c.devices_observer}  >OBSERVER</div>
       }
       {wasObserver ?
 

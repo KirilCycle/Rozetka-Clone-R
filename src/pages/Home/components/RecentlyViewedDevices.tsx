@@ -26,11 +26,10 @@ export default function RecentlyViewedDevices() {
   const [devicesId, setDevicesId] = React.useState<DeviceId[]>([])
   const [loading, setLoading] = React.useState<boolean>(true)
   const { viewedDevices } = useAppSelector(state => state.viewedReducer)
-  const [wasObserver, setWasObserver] = React.useState<boolean>(false)
+ 
 
-  const { ref, inView } = useInView({
-    threshold: 0.9
-  })
+  
+
 
   console.log('VIEWED DEVICES RENDER');
     
@@ -38,8 +37,7 @@ export default function RecentlyViewedDevices() {
 
   React.useEffect(() => {
 
-    if (inView) {
-      console.log('SECOND FECTH')
+   
       const recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed') as string)
       setDevicesId(recentlyViewed)
 
@@ -65,26 +63,13 @@ export default function RecentlyViewedDevices() {
           }
         }
 
-      } else {
-        setLoading(false)
-      }
+      } 
 
-      setWasObserver(true)
-    }
-
-  }, [inView])
+  }, [])
 
   return (
     <div className={c.wrap}>
-      {wasObserver ?
-        null
-        :
-        <div className={c.devices_observer} ref={ref} >OBSERVERD</div>
-      }
-      <h1>Recently viewed</h1>
-      {loading ?
-        <Loader />
-        :
+      
         <>
           {devicesId.length > 0 ?
 
@@ -156,7 +141,7 @@ export default function RecentlyViewedDevices() {
         </>
 
 
-      }
+      
 
     </div>
   )

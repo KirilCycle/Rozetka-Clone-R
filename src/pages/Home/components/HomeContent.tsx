@@ -1,46 +1,47 @@
-import React from 'react'
-import { useInView } from 'react-intersection-observer'
-import DiscountDevices from './DiscountDevices'
-import RecentlyViewedDevices from './RecentlyViewedDevices'
-import SuggestionDevices from './SuggestionDevices'
+import React, { useState, lazy, Suspense } from 'react';
+import { useInView } from 'react-intersection-observer';
+
+const DiscountDevices = lazy(() => import('./DiscountDevices'));
+const RecentlyViewedDevices = lazy(() => import('./RecentlyViewedDevices'));
+const SuggestionDevices = lazy(() => import('./SuggestionDevices'));
 
 export default function HomeContent() {
-
-  // const [slidersVisible, setSlidersVisible] = React.useState<number>(1)
-  // const [btnVisible, setBtnVisible] = React.useState(true)
+  // const [v, setV] = useState(false);
+  // const [v2, setV2] = useState(false);
+  // const [v3, setV3] = useState(false);
 
   // const { ref, inView } = useInView({
-  //   threshold: 0.9
-  // })
+  //   threshold: 0.9,
+  // });
 
-  // //i use observer as i dont want fetch extra elements which customer even wont see  
-  // React.useEffect(() => {
+  // const { ref: ref2, inView: inView2 } = useInView({
+  //   threshold: 0.9,
+  // });
 
-  //   if (slidersVisible > 2) {
-
-  //     setBtnVisible(false)
-
-  //   } else {
-  //     if (inView) {
-  //       setSlidersVisible(prev => prev + 1)
-  //     }
-  //   }
+  // const { ref: ref3, inView: inView3 } = useInView({
+  //   threshold: 0.9,
+  // });
 
 
-  // }, [inView])
 
   return (
     <>
-      <DiscountDevices />
-      <RecentlyViewedDevices />
-      <SuggestionDevices />
+  
+      {/* <Suspense key={'sus'} fallback={<div>Loading...</div>}>
+        <DiscountDevices />
+      </Suspense> */}
+      
+      <DiscountDevices/>
+      <SuggestionDevices/>
+      {/* <RecentlyViewedDevices/> */}
 
-      {/* {
-        btnVisible ?
-          <div ref={ref}></div>
-          :
-          null
-      } */}
+      {/* <Suspense key={'susw'} fallback={<div>Loading...</div>}>
+         <RecentlyViewedDevices></RecentlyViewedDevices>
+      </Suspense>
+     
+      <Suspense key={'susx'} fallback={<div>Loading...</div>}>
+         <SuggestionDevices />
+      </Suspense> */}
     </>
-  )
+  );
 }

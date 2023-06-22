@@ -27,17 +27,17 @@ export default function SubPages({ currentImgs, device }: SubPageProps) {
             return (
                 <DeviceCharacteristicsSubPage deviceCharacteristics={device.characteristics} />
             )
-            break;
+         
         case 'Questions':
             return (
                 <DeviceQuestionsSubPage questionsId={device.questionsId} />
             )
-            break;
+            
         case 'All information':
             return (
                 <DeviceSliderSubPage description={device.description} src={currentImgs} />
             )
-            break;
+            
         default:
             return (
                 <DeviceSliderSubPage description={device.description} src={currentImgs} />
