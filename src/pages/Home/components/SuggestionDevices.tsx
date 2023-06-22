@@ -12,7 +12,7 @@ import { useState, lazy, Suspense, useEffect } from 'react';
 
 
 export default function SuggestionDevices() {
-  const TestHuy = lazy(() => import('./TestHuy'));
+  const SuggestionDevicesContent = lazy(() => import('./SuggestionDevicesContent'));
 
 
   const { ref, inView } = useInView({
@@ -73,7 +73,7 @@ const handleClick = () => {
       
             <div className={c.lazy_wrap} ref={ref} >
                 <Suspense fallback={<div>Loading...</div>}>
-                    {isComponentLoaded && <TestHuy/>}
+                    {isComponentLoaded && <SuggestionDevicesContent/>}
                 </Suspense>
             </div>
      

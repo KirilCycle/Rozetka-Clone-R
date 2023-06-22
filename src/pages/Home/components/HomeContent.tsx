@@ -25,24 +25,15 @@ export default function HomeContent() {
   return (
     <>
   
-      {/* <Suspense key={'sus'} fallback={<div>Loading...</div>}>
-        <DiscountDevices />
-      </Suspense> */}
+      
       
       <DiscountDevices/>
      
       
       
       <SuggestionDevices/>
-      {/* <RecentlyViewedDevices/> */}
-
-      {/* <Suspense key={'susw'} fallback={<div>Loading...</div>}>
-         <RecentlyViewedDevices></RecentlyViewedDevices>
-      </Suspense>
      
-      <Suspense key={'susx'} fallback={<div>Loading...</div>}>
-         <SuggestionDevices />
-      </Suspense> */}
+       
     </>
   );
 }
