@@ -1,6 +1,16 @@
 @import "colors";
 $navbar-hgt: 60px;
 
+.close_btn_wrap {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 10px;
+    top: 10px;
+    background-color: red;
+    z-index: 10;
+}
+
 .menu__container {
     width: 100%;
     background-color: $dark_grey;

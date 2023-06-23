@@ -2,12 +2,16 @@ import React from 'react'
 import { handleBasket } from '../../store/features/Basket.Slice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import c from './style/Navbar.module.scss'
+import DefaultModal from '../../UI/modals/DefaultModal';
+import Basket from '../Basket/Basket';
+import CloseBtn from '../../UI/buttons/CloseBtn';
 
 export default function TopNavbarBasket() {
-   
+
     //update item as basket count changed 
-    const {totalSum} = useAppSelector(state => state.basketReducer)
-   
+
+    const [v, setV] = React.useState(false)
+
     let count;
 
     if (localStorage.getItem('basket') !== null) {
@@ -18,29 +22,32 @@ export default function TopNavbarBasket() {
     }
 
 
-    const dispatch = useAppDispatch()
 
-    function handleBacketVisible() {
-        dispatch(handleBasket())
+  
 
-    }
+
+
 
     return (
+        <>
+            <button onClick={() => setV(true)} className={c.backet__button} >
+                <span className="material-symbols-outlined">
+                    shopping_basket
 
-        <button className={c.backet__button} onClick={handleBacketVisible}>
-            <span className="material-symbols-outlined">
-                shopping_basket
+                    {count < 1 ?
+                        null
+                        :
+                        <p>{count}</p>
+                    }
 
-                {count < 1 ?
-                    null
-                    :
-                    <p>{count}</p>
-                }
+                </span>
 
-            </span>
+            </button>
+            <DefaultModal closeBtn={<CloseBtn />} portalId='portal-basket' active={v} setVisible={setV}  >
+                <Basket></Basket>
+            </DefaultModal>
 
-        </button>
-
+        </>
     )
 }
 

@@ -35,21 +35,9 @@ export default function Basket() {
 
   }, [])
 
-
-
-
   return (
     <>
-    {basketActive && 
-     <div onClick={(e) => { handleClickonParent(e, () => { dispatch(handleBasket()) }) }} className={c.backet_bloor}>
      <div className={c.backet_container} >
-
-       <button className={c.close__button} onClick={() => dispatch(handleBasket())}>
-         <span className="material-symbols-outlined">
-           close
-         </span>
-       </button>
-
        <div className={c.header_conatiner}>
          <p>Basket</p>
        </div>
@@ -74,8 +62,8 @@ export default function Basket() {
          null
        }
      </div>
-   </div>
-    }
+  
+    
     </>
    
   )

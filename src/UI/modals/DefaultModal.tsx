@@ -7,9 +7,10 @@ interface DefaultModalProps {
     children: ReactNode
     active: boolean
     setVisible: Function
+    closeBtn: ReactNode
 }
 
-export default function DefaultModal({ portalId, children, active, setVisible }: DefaultModalProps) {
+export default function DefaultModal({ portalId, children, active, setVisible, closeBtn }: DefaultModalProps) {
 
 
     const modal = React.useRef<HTMLHeadingElement>(null)
@@ -22,14 +23,10 @@ export default function DefaultModal({ portalId, children, active, setVisible }:
         },scssTransitionTime)
     
     }
-
-
-
     React.useEffect(() => {
         setTimeout(() => {
             modal.current!.style.opacity = '1'
         })
-    
     }, [active])
 
     return (
@@ -37,9 +34,14 @@ export default function DefaultModal({ portalId, children, active, setVisible }:
             {active ? (
                 <Portal elId={portalId}>
                     <div ref={modal} onClick={close} className={c.modal}>
+                       
                         <div onClick={(e) => e.stopPropagation()} className={c.modal_content}>
+                           <div onClick={close}>
+                            {closeBtn}
+                           </div>
                             {children}
                         </div>
+                       
                     </div>
                 </Portal>
             ) :
