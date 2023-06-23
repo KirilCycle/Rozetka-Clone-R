@@ -22,7 +22,7 @@ export default function Catalog({ v, setV }: CatalogProps) {
     const [loading, setLoading] = React.useState(true)
 
     const wrapRef = React.useRef<HTMLDivElement | null>(null)
-    const modalRef = React.useRef<HTMLDivElement | null>(null)
+   
 
     const dispatch = useAppDispatch()
 
@@ -69,7 +69,7 @@ export default function Catalog({ v, setV }: CatalogProps) {
                 {loading ?
                     <Loader />
                     :
-                    <div ref={modalRef} className={c.catalog}>
+                    <div className={c.catalog}>
                         <button onClick={close} className={c.close_btn}>
                             <span className="material-symbols-outlined">
                                 close
