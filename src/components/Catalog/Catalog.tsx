@@ -10,26 +10,27 @@ import c from './styles/Catalog.module.scss'
 import Loader from '../Loader'
 import { handleClickonParent } from '../../utils/handleClickonParent'
 
+interface CatalogProps {
+    v: boolean
+    setV: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-export default function Catalog({v, setV}) {
+export default function Catalog({ v, setV }: CatalogProps) {
 
- 
+
     const { types } = useAppSelector(state => state.typeReducer)
     const [loading, setLoading] = React.useState(true)
+
+    const wrapRef = React.useRef<HTMLDivElement | null>(null)
+    const modalRef = React.useRef<HTMLDivElement | null>(null)
 
     const dispatch = useAppDispatch()
 
 
 
-
-
-    console.log('MODAL CATALOG RENDER')
-
-
     async function fetchAllTypes() {
 
         try {
-            const response = await axios.get<Types[]>(`${SERVER_URL}types?`)
             dispatch(fetchTypes())
 
         } catch (e) {
@@ -37,6 +38,16 @@ export default function Catalog({v, setV}) {
         }
     }
 
+    function close() {
+     
+        let scssanimationtime = 400
+
+        wrapRef.current!.style.opacity = '0'
+        setTimeout(() => {
+            setV(false)
+
+        },scssanimationtime)
+    }
 
     React.useEffect(() => {
         if (types.length < 1) {
@@ -44,44 +55,45 @@ export default function Catalog({v, setV}) {
         } else {
             setLoading(false)
         }
+        setTimeout(() => {
+            wrapRef.current!.style.opacity = '1'
+        })
     }, [])
 
 
 
     return (
         <>
-           
-                <div onClick={(e) => handleClickonParent(e, () => {})} className={c.wrap}>
 
+            <div ref={wrapRef} onClick={(e) => handleClickonParent(e, close)} className={c.wrap}>
+                {loading ?
+                    <Loader />
+                    :
+                    <div ref={modalRef} className={c.catalog}>
+                        <button onClick={close} className={c.close_btn}>
+                            <span className="material-symbols-outlined">
+                                close
+                            </span>
+                        </button>
+                        <ul className={c.types_list} >
+                            {types.map((t: Types) =>
+                                <li key={t.type} >
+                                    <div className={c.image_container}>
+                                        <img src={t.image} ></img>
+                                    </div>
+                                    <button>
+                                        <Link onClick={() => { }} to={t.type}>
+                                            {t.fullTypeName}
+                                        </Link>
 
-                    {loading ?
-                        <Loader />
-                        :
-                        <div className={c.catalog}>
-                            <button onClick={() => { setV(false)  }} className={c.close_btn}>
-                                <span className="material-symbols-outlined">
-                                    close
-                                </span>
-                            </button>
-                            <ul className={c.types_list} >
-                                {types.map((t: Types) =>
-                                    <li key={t.type} >
-                                        <div className={c.image_container}>
-                                            <img src={t.image} ></img>
-                                        </div>
-                                        <button>
-                                            <Link onClick={() => {}} to={t.type}>
-                                                {t.fullTypeName}
-                                            </Link>
+                                    </button>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
 
-                                        </button>
-                                    </li>
-                                )}
-                            </ul>
-                        </div>
-
-                    }
-                </div>
+                }
+            </div>
         </>
     )
 }
