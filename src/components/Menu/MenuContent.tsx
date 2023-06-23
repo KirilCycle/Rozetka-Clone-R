@@ -28,10 +28,6 @@ export default function Menu() {
     return (
 
         <div onClick={(e) => { handleClickonParent(e, () => { menuHandle() }) }} ref={menuRef} className={true ? c.menu__active : c.menu}>
-
-            
-                
-
             <div className={c.menu_content}>
                 <button className={c.close__button} onClick={menuHandle}>
                     <span className="material-symbols-outlined">
@@ -39,7 +35,7 @@ export default function Menu() {
                     </span>
                 </button>
                 <div className={c.menu__header__block}>
-                    <h2>SKRIX Devices</h2>
+                    <h2>Shop name</h2>
                 </div>
 
                 <div onClick={handleCatalog} className={c.menu__category}>

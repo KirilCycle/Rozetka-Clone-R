@@ -1,0 +1,159 @@
+@import "../../../styles/colors";
+
+.menu_content {
+  width: 100%;
+  flex-shrink: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  height: 100%;
+  position: relative;
+  z-index: 190;
+
+  .list_container {
+    padding-left: 30px;
+    margin-bottom: 50px;
+  }
+
+  .category__content {
+    width: 100%;
+    background-color: white;
+    height: auto;
+    display: none;
+  }
+
+  .category__content__active {
+    display: flex;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+
+    .category_list_container {
+      width: 300px;
+
+      li {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #8080804d;
+        padding: 15px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+
+        img {
+          width: auto;
+          height: 30px;
+          margin-left: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &:hover {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .menu__category {
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $second_color_light;
+    color: white;
+    cursor: pointer;
+
+    .arrow__container {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+    }
+  }
+
+  .close__button {
+    position: absolute;
+    right: 0px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .ul_links {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+
+    a {
+      width: 100%;
+    }
+
+    li {
+      margin-top: 2px;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $light_grey;
+      padding: 15px;
+      cursor: pointer;
+
+      a {
+        margin-left: 5px;
+      }
+
+      &:hover {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.511);
+        border-radius: 5px;
+        background-color: rgba(120, 165, 255, 0.301);
+        transition: all 0.2s;
+      }
+    }
+  }
+
+  .menu__header__block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    background-color: rgb(15, 15, 15);
+
+    h2 {
+      font-family: "Kantumruy Pro", sans-serif;
+      color: white;
+      margin: 0% auto;
+      font-size: 1.2rem;
+      font-weight: 550;
+    }
+  }
+}
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Define the styles for the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888888d2;
+    border-radius: 5px;
+  }
+  
+  /* Define the styles for the scrollbar track on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
