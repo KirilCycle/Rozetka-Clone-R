@@ -11,9 +11,9 @@ import Loader from '../Loader'
 import { handleClickonParent } from '../../utils/handleClickonParent'
 
 
-export default function Catalog() {
+export default function Catalog({v, setV}) {
 
-    const { catalogVisible, setCatalogVisible } = React.useContext(MenuContext)
+ 
     const { types } = useAppSelector(state => state.typeReducer)
     const [loading, setLoading] = React.useState(true)
 
@@ -50,15 +50,15 @@ export default function Catalog() {
 
     return (
         <>
-            {catalogVisible ?
-                <div onClick={(e) => handleClickonParent(e, () => {setCatalogVisible(false)})} className={c.wrap}>
+           
+                <div onClick={(e) => handleClickonParent(e, () => {})} className={c.wrap}>
 
 
                     {loading ?
                         <Loader />
                         :
                         <div className={c.catalog}>
-                            <button onClick={() => { setCatalogVisible(false) }} className={c.close_btn}>
+                            <button onClick={() => { setV(false)  }} className={c.close_btn}>
                                 <span className="material-symbols-outlined">
                                     close
                                 </span>
@@ -70,7 +70,7 @@ export default function Catalog() {
                                             <img src={t.image} ></img>
                                         </div>
                                         <button>
-                                            <Link onClick={() => setCatalogVisible(false)} to={t.type}>
+                                            <Link onClick={() => {}} to={t.type}>
                                                 {t.fullTypeName}
                                             </Link>
 
@@ -82,10 +82,6 @@ export default function Catalog() {
 
                     }
                 </div>
-                :
-                null
-
-            }
         </>
     )
 }

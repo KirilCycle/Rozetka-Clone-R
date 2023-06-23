@@ -4,11 +4,12 @@ import ReactDOM from 'react-dom';
 
 
 interface PortalInt {
-    children: ReactNode
+    children: ReactNode,
+    elId: string
 }
 
-const Portal = ({ children }: PortalInt) => {
-  const portalRoot = document.getElementById('menu-portal');
+const Portal = ({ children, elId }: PortalInt) => {
+  const portalRoot = document.getElementById(elId);
 
   return ReactDOM.createPortal(children, portalRoot as HTMLElement);
 };

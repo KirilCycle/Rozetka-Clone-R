@@ -44,11 +44,14 @@ function App() {
             <MobileSortActive.Provider value={{ active, handleMenuState }} >
               
                <MenuContext.Provider value={{ active: menuActive, menuHandle, catalogVisible, setCatalogVisible }}>
-                  <Catalog />
-                  {/* <Menu /> */}
+                  
+                  {/* <Catalog /> */}
+                  
+                  <div id='catalog-portal'></div>
                   <div id='menu-portal'></div>
-
+                  
                   <TopNavbar />
+                  
                </MenuContext.Provider>
               
                <Basket />

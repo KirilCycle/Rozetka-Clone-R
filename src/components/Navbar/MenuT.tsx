@@ -34,11 +34,10 @@ export default function MenuT({ v, set }: MenuInterface) {
   return (
     <>
       {v && (
-        <Portal>
+        <Portal elId='menu-portal'>
           <div onClick={(e) => closeMenu(e as React.MouseEvent<HTMLDivElement> )} ref={menuWrapRef} className={c.main_wrap}>
             <div  onClick={(e) => e.stopPropagation() } ref={menuContentRef} className={c.menu_contnet_wrap}>
-
-                <MenuContentBeta></MenuContentBeta>
+                <MenuContentBeta closeFn={closeMenu}></MenuContentBeta>
             </div>
           </div>
         </Portal>

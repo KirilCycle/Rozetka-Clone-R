@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MenuContext } from '../../context'
 
 import c from  './style/Navbar.module.scss'
+import Portal from '../portals/Portsl'
+import Catalog from '../Catalog/Catalog'
 
 export default function NavbarInputContainer() {
 
@@ -10,7 +12,7 @@ export default function NavbarInputContainer() {
 
     let navigate = useNavigate()
  
-    const { setCatalogVisible } = React.useContext(MenuContext)
+    const [active, setActive] =  React.useState(false)
 
 
     function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
@@ -31,12 +33,22 @@ export default function NavbarInputContainer() {
 
     return (
         <div className={c.search__container}>
-            <button onClick={() =>  {setCatalogVisible(true)}} className={c.category_btn}>
+            
+            <button onClick={() =>  {setActive(true)}} className={c.category_btn}>
                 <p>Catalog</p>
                 <span className="material-symbols-outlined">
                     category
                 </span>
             </button>
+             
+             {active && (
+                <Portal elId='catalog-portal'>
+                    <Catalog v={active} setV={setActive}></Catalog>
+                </Portal>
+             )
+
+             }
+
             <div className={c.input_container}>
                 <input type='text' onKeyDown={handleKeyDown} onChange={(e) => { setValue(e.target.value) }} className={c.search_input} placeholder='i am looking for...'></input>
             <button onClick={navigateBySearchItem} className={c.find__button}>Find</button>

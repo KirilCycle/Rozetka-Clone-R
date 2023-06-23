@@ -3,18 +3,17 @@ import InformationAboutCompanyList from '../InformationAboutCompanyList'
 import { Link } from 'react-router-dom'
 import c from './style/MenuContent.module.scss'
 
-export default function MenuContentBeta() {
+interface MenuContentBeta {
+    closeFn: Function
+}
+
+export default function MenuContentBeta({ closeFn }: MenuContentBeta) {
   
 
 
-
-  const menuRef = React.useRef(null)
-
-  console.log('MENU RENDER');
-
   return (
     <div className={c.menu_content}>
-    <button className={c.close__button}>
+    <button onClick={closeFn as any} className={c.close__button}>
         <span className="material-symbols-outlined">
             close
         </span>
