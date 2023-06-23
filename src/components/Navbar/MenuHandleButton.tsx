@@ -1,14 +1,16 @@
 import React from 'react'
 import { MenuContext } from '../../context'
-
-import c from  './style/Navbar.module.scss'
+import { createPortal } from 'react-dom';
+import c from './style/Navbar.module.scss'
+import MenuT from './MenuT';
 
 export default function MenuHandleButton() {
 
-    const menuState = React.useContext(MenuContext)
+   
+    const [v, setV] = React.useState(false)
 
     function menuHandle() {
-        menuState.menuHandle()
+        setV(!v)
     }
 
     return (
@@ -16,7 +18,9 @@ export default function MenuHandleButton() {
             <span></span>
             <span></span>
             <span></span>
+            {v && <MenuT v={v} set={setV}></MenuT>}
         </div>
+
 
     )
 }

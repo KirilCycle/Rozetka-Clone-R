@@ -14,6 +14,7 @@ export default function Menu() {
     const { types, loading, error } = useAppSelector(state => state.typeReducer)
     const { active, menuHandle, setCatalogVisible } = React.useContext(MenuContext)
 
+
     const menuRef = React.useRef(null)
 
     console.log('MENU RENDER');
@@ -28,7 +29,10 @@ export default function Menu() {
 
     return (
 
-        <div onClick={(e) => { handleClickonParent(e, () => { menuHandle() }) }} ref={menuRef} className={active ? c.menu__active : c.menu}>
+        <div onClick={(e) => { handleClickonParent(e, () => { menuHandle() }) }} ref={menuRef} className={true ? c.menu__active : c.menu}>
+
+            
+                
 
             <div className={c.menu_content}>
                 <button className={c.close__button} onClick={menuHandle}>
@@ -51,7 +55,7 @@ export default function Menu() {
                 </div>
 
                 <ul className={c.ul_links}>
-                    <Link className='link_conatiner'  onClick={menuHandle} to={'/'}>
+                    <Link className='link_conatiner' onClick={menuHandle} to={'/'}>
                         <li>
                             <span className="material-symbols-outlined">
                                 home
@@ -95,5 +99,7 @@ export default function Menu() {
 
 
         </div>
+
+
     )
 }

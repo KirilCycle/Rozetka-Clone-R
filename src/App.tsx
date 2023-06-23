@@ -8,7 +8,6 @@ import DevicePage from './pages/DevicePage/DevicePage';
 import SelectedDevicesPage from './pages/SelectedDeviceCategory/SelectedDevicesCategory';
 
 import Basket from './components/Basket/Basket';
-import Menu from './components/Menu/Menu';
 import { MenuContext, MobileSortActive } from './context';
 import SearchPage from './pages/Seacrh/SearchPage';
 import LeftMobileFilter from './components/LeftMobileFilter';
@@ -38,15 +37,23 @@ function App() {
 
    return (
       <BrowserRouter>
-         <div className='app-wrapp'>
+         <div className='app-wrap'>
+             
+         
+
             <MobileSortActive.Provider value={{ active, handleMenuState }} >
+              
                <MenuContext.Provider value={{ active: menuActive, menuHandle, catalogVisible, setCatalogVisible }}>
                   <Catalog />
-                  <Menu />
+                  {/* <Menu /> */}
+                  <div id='menu-portal'></div>
+
                   <TopNavbar />
                </MenuContext.Provider>
+              
                <Basket />
                <LeftMobileFilter />
+              
                <Routes>
                   {routes.map((route) => <Route key={route.path} element={route.element} path={route.path}></Route>)}
                </Routes>

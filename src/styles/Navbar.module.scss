@@ -268,12 +268,11 @@ $navbar-hgt: 60px;
     }
 }
 
-
 @media (min-width: 1700px) {
     .menu__container {
         height: 70px;
-
-
+        
+        
         .top_navbar {
             height: 70px;
             width: 1700px;
@@ -310,3 +309,14 @@ $navbar-hgt: 60px;
         }
     }
 }
+
+
+.menu-main-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 300;
+}
+
+

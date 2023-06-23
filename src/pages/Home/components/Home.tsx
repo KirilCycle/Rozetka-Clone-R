@@ -3,6 +3,7 @@ import c from '../styles/HomePage.module.scss'
 import BannerSlider from './BannerSlider'
 import HorizontalBasket from '../../../components/HorizontlaBasket/HorizontalBasket'
 import HomeContent from './HomeContent'
+import { createPortal } from 'react-dom';
 
 interface HandleCategoryProps {
   handleCategory: React.Dispatch<React.SetStateAction<boolean>>
