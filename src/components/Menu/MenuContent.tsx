@@ -25,8 +25,6 @@ export default function Menu() {
         setCatalogVisible(true)
     }
 
-
-
     return (
 
         <div onClick={(e) => { handleClickonParent(e, () => { menuHandle() }) }} ref={menuRef} className={true ? c.menu__active : c.menu}>

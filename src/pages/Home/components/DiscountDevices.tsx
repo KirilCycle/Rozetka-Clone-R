@@ -6,7 +6,7 @@ const DiscountDevicesContent = lazy(() => import('./DiscountDevicesContent'));
 
 export default function DiscountDevices() {
     const { ref, inView } = useInView({
-        threshold: 1,
+        threshold: 0.6,
         triggerOnce: true
 
     });
@@ -17,7 +17,6 @@ export default function DiscountDevices() {
     useEffect(() => {
        if (inView) {
            setV(inView)
-           alert('pizda')
            handleClick();
        }
     }, [inView]);

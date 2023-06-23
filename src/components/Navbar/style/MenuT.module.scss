@@ -3,7 +3,7 @@
 .main_wrap {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.935);
+    background-color: rgba(0, 0, 0, 0.631);
     position: fixed;
     z-index: 999;
 }
@@ -11,8 +11,11 @@
 .menu_contnet_wrap {
     width: 320px;
     height: 100%;
+    transition: transform 0.5s ease-out; 
+    transform: translateX(-120%) ;
     box-sizing: border-box;
     position: absolute;
+    background-color: white;
     left: 0px;
 }
 
