@@ -5,6 +5,8 @@ import { MenuContext } from '../../context'
 import c from  './style/Navbar.module.scss'
 import Portal from '../portals/Portsl'
 import Catalog from '../Catalog/Catalog'
+import DefaultModal from '../../UI/modals/DefaultModal'
+import CloseBtn from '../../UI/buttons/CloseBtn'
 
 export default function NavbarInputContainer() {
 
@@ -41,13 +43,13 @@ export default function NavbarInputContainer() {
                 </span>
             </button>
              
-             {active && (
-                <Portal elId='catalog-portal'>
-                    <Catalog v={active} setV={setActive}></Catalog>
-                </Portal>
-             )
+            
+                <DefaultModal closeBtn={<CloseBtn />} active={active} setVisible={setActive} portalId={'catalog-portal'}>
+                    <Catalog></Catalog>
+                </DefaultModal>
+             
 
-             }
+             
 
             <div className={c.input_container}>
                 <input type='text' onKeyDown={handleKeyDown} onChange={(e) => { setValue(e.target.value) }} className={c.search_input} placeholder='i am looking for...'></input>
