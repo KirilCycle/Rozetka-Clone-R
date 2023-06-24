@@ -1,3 +1,7 @@
+ 
+
+
+
 .App {
   text-align: center;
 
@@ -172,15 +176,6 @@
 }
 
 
-.main-button {
-  background-color: #00a046;
-  color: #ffffff;
-  transition: background-color 300ms ease-in-out ;
-}
-
-.main-button:hover {
-  background-color: #31c055;
-}
 
 
 /* @media (max-width: 1000px) and (min-width: 600px) {

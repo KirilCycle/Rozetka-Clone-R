@@ -1,5 +1,5 @@
 @import '../../../styles/colors';
-
+@import '../../../styles/uipatterns';
 
 
     .backet_container {
@@ -42,20 +42,7 @@
                 }
             }
 
-            button {
-                height: max-content;
-                border-radius: 5px;
-                padding: 10px;
-                transition: all 0.3s;
-                background-color: $second_color;
-                color: white;
-
-                &:hover {
-                    transition: all 0.3s;
-                    background-color: $second_color_light;
-                }
-
-            }
+        
 
 
 

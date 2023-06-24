@@ -1,19 +1,19 @@
-import React, { ReactNode } from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
 import c from './styles/MainButton.module.scss'
 
-interface CSSClass {
+export interface CSSClass {
   [key: string]: string;
 }
 
 interface BtnI {
     children: ReactNode
-    className: string
     style: CSSClass
+    onClick?: Function 
 }
 
-export default function MainButton({children, className, style}: BtnI) {
+export default function MainButton({children, style, onClick}: BtnI) {
   return (
-    <button className={`main-button`} style={style}>
+    <button onClick={onClick as MouseEventHandler } className={c.main_button} style={style}>
         {children}
     </button>
   )

@@ -1,0 +1,21 @@
+
+.inpt {
+   width: 100%;
+   height: 30px;
+   padding: 10px 0px 10px 5px;
+   background-color: rgba(168, 168, 168, 0); 
+   border: 1px solid rgb(188, 188, 188);
+   border-radius: 5px;
+
+   &:hover {
+    border: 1px solid gray;
+   }
+
+   &:focus {
+    border: 1px solid rgb(0, 98, 246);
+   }
+
+}
+
+
+

@@ -24,9 +24,6 @@ export default function DevicePageContent({ device }: DevicePageContent) {
 
     const currentImgs = device?.images[currentColor]
 
-  
-
-
     return (
         <>
             <SelectedSubPageContext.Provider value={{ selected: currentSubPage, setCurSubPages, currentColor, setCurrentColor }}>

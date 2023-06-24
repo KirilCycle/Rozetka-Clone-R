@@ -1,1 +1,12 @@
+@import '../../../styles/colors'; 
 
+.main_button {
+    background-color:  $main-color;
+    color: #ffffff;
+    transition: background-color 200ms ease-in-out ;
+  }
+  
+  .main_button:hover {
+    background-color: $main-color-hover;
+  }
+  

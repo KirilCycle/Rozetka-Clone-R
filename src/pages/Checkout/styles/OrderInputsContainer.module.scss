@@ -14,19 +14,7 @@ $border_inpt: $light_grey;
         top: 0px;
     }
 
-    input {
-        width: 100%;
-        height: 45px;
-        margin-top: 20px;
-        border-radius: 5px;
-        border: 1px solid $border_inpt;
-
-        &:focus {
-            border: 1px solid $links_color;
-        }
-
-    }
-
+  
 }
 
 .form_content {

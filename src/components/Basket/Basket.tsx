@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import c from './styles/Basket.module.scss'
 import BacketList from './components/BasketList'
 import { handleClickonParent } from '../../utils/handleClickonParent'
+import MainButton from '../../UI/buttons/MainButton'
 
 export default function Basket() {
 
@@ -37,34 +38,38 @@ export default function Basket() {
 
   return (
     <>
-     <div className={c.backet_container} >
-       <div className={c.header_conatiner}>
-         <p>Basket</p>
-       </div>
+      <div className={c.backet_container} >
+        <div className={c.header_conatiner}>
+          <p>Basket</p>
+        </div>
 
-       {devicesId?.length > 0 ?
-         <BacketList devicesIdArray={devicesId} />
-         :
-         <>
-           <div className={c.backet_image_conatiner}>
-             <img src='https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg' />
-           </div>
-           <h2 className={c.basket_alert}>{'Basket is empty :('}</h2>
-         </>
-       }
-       {devicesId?.length > 0 ?
+        {devicesId?.length > 0 ?
+          <BacketList devicesIdArray={devicesId} />
+          :
+          <>
+            <div className={c.backet_image_conatiner}>
+              <img src='https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg' />
+            </div>
+            <h2 className={c.basket_alert}>{'Basket is empty :('}</h2>
+          </>
+        }
+        {devicesId?.length > 0 ?
 
-         <div className={c.manage__block}>
-           <h3>Total sum {totalSum}</h3>
-           <button onClick={handleRedirect} >Make an order</button>
-         </div>
-         :
-         null
-       }
-     </div>
-  
-    
+          <div className={c.manage__block}>
+            <h3>Total sum {totalSum}</h3>
+            <MainButton style={{
+              height: 'max-content',
+              borderRadius: '5px',
+              padding: '10px',
+            }} onClick={handleRedirect} >Make an order</MainButton>
+          </div>
+          :
+          null
+        }
+      </div >
+
+
     </>
-   
+
   )
 }

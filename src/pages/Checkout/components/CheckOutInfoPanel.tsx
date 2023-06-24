@@ -2,6 +2,7 @@ import React from 'react'
 import { useAppDispatch, useAppSelector } from '../../../store/hooks'
 import c from '../styles/CheckOutInfoPanel.module.scss'
 import PromocodeContent from './PromocodeContent'
+import ContentBtn from '../../../UI/buttons/ContentBtn'
 
 export default function CheckOutInfoPanel() {
 
@@ -75,7 +76,12 @@ export default function CheckOutInfoPanel() {
                   </li>
                </ul>
             </div>
-            <button className={c.confirm_btn}>Confirm order</button>
+            
+            <ContentBtn   onClick={() => alert('')}>
+               Confirm order
+            </ContentBtn>
+            {/* <button className={c.confirm_btn}>Confirm order</button> */}
+
             <div className={c.addition_info_container}>
                <h4>
                   By confirming the order, I accept the following conditions:

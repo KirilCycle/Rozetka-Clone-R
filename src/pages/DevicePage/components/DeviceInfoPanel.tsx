@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks'
 import c from '../styles/DevicePage.module.scss'
 import { pushDeviceInfo } from '../../../store/features/BasketData'
 import uuid from 'react-uuid'
+import MainButton from '../../../UI/buttons/MainButton'
 
 
 interface DeviceInfoPanelProps {
@@ -122,7 +123,13 @@ export default function DeviceInfoPanel({ device }: DeviceInfoPanelProps) {
                     }
 
                     <div className={c.order__buttons}>
+
+
+                    
+
+
                         <button>Buy</button>
+                       
                         <button onClick={handleBasketButton} className={findSameBasketItem() ? c.basket__button__active : c.basket__button}>
                             {findSameBasketItem() ? "In basket" : "Put in basket"}
                             <span className="material-symbols-outlined">

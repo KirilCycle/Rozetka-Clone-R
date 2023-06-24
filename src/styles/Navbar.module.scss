@@ -1,5 +1,5 @@
 @import "colors";
-$navbar-hgt: 60px;
+$navbar-hgt: 80px;
 
 .close_btn_wrap {
     position: absolute;
@@ -18,16 +18,17 @@ $navbar-hgt: 60px;
     justify-content: center;
     position: fixed;
     z-index: 100;
-    height: auto;
+    height: 200px;
 
     .top_navbar {
         width: 100%;
         background-color: $dark_grey;
-        height: $navbar-hgt;
+        height: 80px;
         display: flex;
         align-items: center;
         position: relative;
         $border: 5px;
+        padding: 24px;
 
 
 

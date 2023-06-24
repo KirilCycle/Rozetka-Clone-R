@@ -65,8 +65,7 @@ export default function NavbarInputContainer() {
                 <input type='text' onKeyDown={handleKeyDown} onChange={(e) => { setValue(e.target.value) }} className={c.search_input} placeholder='i am looking for...'></input>
                 {/* <button onClick={navigateBySearchItem} className={c.find__button}>Find</button> */}
                
-                    <MainButton style={findBtnCSS} className={c.find_btn} >Find</MainButton>
-                
+                    <MainButton style={findBtnCSS} onClick={navigateBySearchItem}  >Find</MainButton>
 
             </div>
         </div>

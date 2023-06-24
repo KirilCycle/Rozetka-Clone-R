@@ -1,0 +1,20 @@
+@import '../../../styles/colors';
+
+.btn {
+    width: 100%;
+    background-color: $btn_contnent;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 400ms ease-in-out;
+
+    &:hover {
+        background-color: $btn_contnent_hover;
+      
+        
+    }
+    
+}
+
+
