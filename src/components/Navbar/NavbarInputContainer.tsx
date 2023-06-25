@@ -5,7 +5,7 @@ import { MenuContext } from '../../context'
 import c from './style/Navbar.module.scss'
 import Portal from '../portals/Portsl'
 import Catalog from '../Catalog/Catalog'
-import DefaultModal from '../../UI/modals/DefaultModal'
+import DefaultModal from '../../UI/modals/ConditionalRenderModal'
 import CloseBtn from '../../UI/buttons/CloseBtn'
 import MainButton from '../../UI/buttons/MainButton'
 

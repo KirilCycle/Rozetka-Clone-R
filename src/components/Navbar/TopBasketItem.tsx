@@ -2,7 +2,7 @@ import React from 'react'
 import { handleBasket } from '../../store/features/Basket.Slice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import c from './style/Navbar.module.scss'
-import DefaultModal from '../../UI/modals/DefaultModal';
+import DefaultModal from '../../UI/modals/ConditionalRenderModal';
 import Basket from '../Basket/Basket';
 import CloseBtn from '../../UI/buttons/CloseBtn';
 import DisplatHandleModal from '../../UI/modals/DisplayHandleModal';
@@ -12,6 +12,7 @@ export default function TopNavbarBasket() {
     //update item as basket count changed 
 
     const [v, setV] = React.useState(false)
+    const [domSetted, setDom] = React.useState(false)
 
     let count;
 
@@ -22,12 +23,9 @@ export default function TopNavbarBasket() {
         count = 0
     }
 
-
-
-  
-
-
-
+    React.useEffect(() => {
+        setDom(true)
+    },[])
 
     return (
         <>
@@ -44,9 +42,11 @@ export default function TopNavbarBasket() {
                 </span>
 
             </button>
-            <DisplatHandleModal  closeBtn={<CloseBtn />} portalId='portal-basket' active={v} setVisible={setV} > 
+           { domSetted &&  <DisplatHandleModal  closeBtn={<CloseBtn />} portalId='portal-basket' active={v} setVisible={setV} > 
                 <Basket></Basket>
             </DisplatHandleModal>
+
+           }
         </>
     )
 }

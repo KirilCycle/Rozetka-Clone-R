@@ -17,7 +17,6 @@ export default function DisplatHandleModal({ portalId, children, active, setVisi
         setTimeout(() => {
             setVisible(false)
         }, scssTransitionTime)
-
     }
     React.useEffect(() => {
      if (active) {

@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import c from './defaultModal.module.scss'
 import Portal from '../../components/portals/Portsl'
 import { ModalProps } from '../../models/uimodels'
+import ModalContent from './components/ModalContent'
 
 export default function DefaultModal({ portalId, children, active, setVisible, closeBtn }: ModalProps) {
 
@@ -12,13 +13,17 @@ export default function DefaultModal({ portalId, children, active, setVisible, c
         modal.current!.style.opacity = '0'
         setTimeout(() => {
             setVisible(false)
-        },scssTransitionTime)
-    
+        }, scssTransitionTime)
+
     }
     React.useEffect(() => {
-        setTimeout(() => {
-            modal.current!.style.opacity = '1'
-        })
+        
+        if (active) {
+            setTimeout(() => {
+                modal.current!.style.opacity = '1'
+            },0)
+        }
+
     }, [active])
 
     return (
@@ -26,14 +31,18 @@ export default function DefaultModal({ portalId, children, active, setVisible, c
             {active ? (
                 <Portal elId={portalId}>
                     <div ref={modal} onClick={close} className={c.modal}>
-                       
-                        <div onClick={(e) => e.stopPropagation()} className={c.modal_content}>
+
+                        {/* <div onClick={(e) => e.stopPropagation()} className={c.modal_content}>
                            <div onClick={close}>
                             {closeBtn}
                            </div>
                             {children}
-                        </div>
-                       
+                        </div> */}
+
+                        <ModalContent close={close} closeBtn={closeBtn}>
+                            {children}
+                        </ModalContent>
+
                     </div>
                 </Portal>
             ) :
