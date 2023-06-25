@@ -10,12 +10,14 @@ import PaginationControll from '../../../components/PaginationControll'
 
 type searchQuery = string
 
-interface SearchPageDevicesPanelProps {
-    query: searchQuery
-}
 
 
-export default function SearchPageDevicesPanel({ query }: SearchPageDevicesPanelProps) {
+
+export default function SearchPageDevicesPanel( ) {
+
+    const queryStore = useAppSelector(state => state.searchReducer.query)
+
+    let query = window.location.pathname.replaceAll('/', '').replace('search', '')
 
     const { selectedBrands } = useAppSelector((state) => state.brandReducer)
     const { error, loading, devices,tottalItems, currentSortType, currentPage, limit } = useAppSelector((state) => state.productReducer)
@@ -73,7 +75,7 @@ export default function SearchPageDevicesPanel({ query }: SearchPageDevicesPanel
 
         }
 
-    }, [currentSortType, currentPage, limit, maxPrice, minPrice, selectedBrands])
+    }, [currentSortType, currentPage, limit, maxPrice, minPrice, selectedBrands,query ])
 
 
     return (

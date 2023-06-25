@@ -16,20 +16,28 @@ export default function SearchPage() {
   function handleMenuState() {
     setActive(active => !active)
   }
+  
+ 
+  
 
   return (
 
     <div className={c.main_wrap}>
+
+      {/* <button onClick={makeRerender} >SUSUSUSUSUS</button> */}
+
       <MobileSortActive.Provider value={{ active, handleMenuState }} >
 
 
         <LeftMobileFilter />
-        <SearchHeader searchQuerry={searchQuerry} />
+      
+        <SearchHeader />
+
         <div className={c.wrap}>
           <div className={c.filter_content}>
             <SerachPageFilter />
           </div>
-          <SearchPageDevicesPanel query={searchQuerry} />
+          <SearchPageDevicesPanel  />
         </div>
 
 

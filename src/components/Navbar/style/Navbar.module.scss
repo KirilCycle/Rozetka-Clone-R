@@ -1,5 +1,5 @@
 @import '../../../styles/colors';
-$navbar-hgt: 60px;
+$navbar-hgt: 50px;
 
 .menu__container {
     width: 100%;
@@ -8,6 +8,7 @@ $navbar-hgt: 60px;
     justify-content: center;
     position: fixed;
     z-index: 100;
+    padding: 10px;
     height: auto;
 
     .top_navbar {

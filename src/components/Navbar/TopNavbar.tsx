@@ -10,7 +10,7 @@ export default function TopNavbar() {
 
     console.log('NAVBAR render')
     const containerRef = React.useRef<HTMLDivElement>(null)
-
+    
    
 
     return (
@@ -20,7 +20,6 @@ export default function TopNavbar() {
                 <MenuHandleButton />
                 <NavbarInputContainer />
                 <TopNavbarBasket/>
-               
             </div>
         </div>
 

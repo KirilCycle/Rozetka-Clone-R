@@ -11,13 +11,14 @@ import basketStateSlice from './features/BasketState.Slice';
 import viewedReducer from './features/ViewedDevices.Slice';
 import suggetsionsReducer from './features/Suggestions.SLice'
 import basketDataReducer from './features/BasketData'
-import  basketDevcies from './features/BasketDevices'
-
+import basketDevcies from './features/BasketDevices'
+import searchReducer from './features/Search.Slice'
 
 
 
 const rootReducer = combineReducers({
   typeReducer,
+  searchReducer,
   brandReducer,
   productReducer,
   basketReducer,
@@ -29,9 +30,6 @@ const rootReducer = combineReducers({
   suggetsionsReducer,
   basketDataReducer,
   basketDevcies,
-  
-
-
    
 })
 

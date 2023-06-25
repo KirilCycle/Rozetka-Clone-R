@@ -22,7 +22,7 @@ export default function BrandsCheckList() {
 
     const dispatch = useAppDispatch()
 
-    const dispacth = useAppDispatch()
+   
 
     window.onpopstate = e => {
       
@@ -60,17 +60,17 @@ export default function BrandsCheckList() {
 
         if (isChecked) {
 
-            dispacth(addSelectedBrands([...brandsStore.selectedBrands, value]))
+            dispatch(addSelectedBrands([...brandsStore.selectedBrands, value]))
 
         } else {
 
             const filteredList = brandsStore.selectedBrands.filter((item) => item !== value);
-            dispacth(addSelectedBrands(filteredList))
+            dispatch(addSelectedBrands(filteredList))
 
         }
 
         //reset 
-        dispacth(setCurrentPage(1))
+        dispatch(setCurrentPage(1))
 
     };
 
