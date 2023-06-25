@@ -9,7 +9,9 @@ import DisplatHandleModal from '../../UI/modals/DisplayHandleModal';
 
 export default function TopNavbarBasket() {
 
-    //update item as basket count changed 
+    
+    //update basket count using store which will make rerender 
+    const { reload } = useAppSelector(state => state.basketStateSlice)
 
     const [v, setV] = React.useState(false)
     const [domSetted, setDom] = React.useState(false)
