@@ -1,17 +1,9 @@
 import React, { ReactNode } from 'react'
 import c from './defaultModal.module.scss'
 import Portal from '../../components/portals/Portsl'
+import { ModalProps } from '../../models/uimodels'
 
-interface DefaultModalProps {
-    portalId: string
-    children: ReactNode
-    active: boolean
-    setVisible: Function
-    closeBtn: ReactNode
-}
-
-export default function DefaultModal({ portalId, children, active, setVisible, closeBtn }: DefaultModalProps) {
-
+export default function DefaultModal({ portalId, children, active, setVisible, closeBtn }: ModalProps) {
 
     const modal = React.useRef<HTMLHeadingElement>(null)
     const scssTransitionTime = 400

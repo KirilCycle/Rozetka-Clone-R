@@ -11,6 +11,11 @@
     opacity: 0;
     transition: opacity 400ms ease-in-out;
 }
+
+.hide {
+    display: none;
+}
+
 .modal_content {
     width: max-content;
     position: relative;

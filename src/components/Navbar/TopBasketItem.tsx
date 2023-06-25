@@ -5,6 +5,7 @@ import c from './style/Navbar.module.scss'
 import DefaultModal from '../../UI/modals/DefaultModal';
 import Basket from '../Basket/Basket';
 import CloseBtn from '../../UI/buttons/CloseBtn';
+import DisplatHandleModal from '../../UI/modals/DisplayHandleModal';
 
 export default function TopNavbarBasket() {
 
@@ -43,10 +44,9 @@ export default function TopNavbarBasket() {
                 </span>
 
             </button>
-            <DefaultModal closeBtn={<CloseBtn />} portalId='portal-basket' active={v} setVisible={setV}  >
+            <DisplatHandleModal  closeBtn={<CloseBtn />} portalId='portal-basket' active={v} setVisible={setV} > 
                 <Basket></Basket>
-            </DefaultModal>
-
+            </DisplatHandleModal>
         </>
     )
 }

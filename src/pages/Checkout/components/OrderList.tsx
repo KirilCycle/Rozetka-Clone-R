@@ -52,9 +52,7 @@ export default function OrderPage() {
       </div >
 
     <ul className={c.devices_list} >
-      {devicesFromBasket.map((el, index) => <CheckoutListDeviceItem key={el.innerId + el.color} device={el} />)
-
-      }
+      {devicesFromBasket.map((el, index) => <CheckoutListDeviceItem key={el.innerId + el.color} device={el} />)}
     </ul>
     </div >
   )
