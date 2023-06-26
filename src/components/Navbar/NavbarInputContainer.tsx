@@ -11,18 +11,21 @@ import MainButton from '../../UI/buttons/MainButton'
 import { useSelector } from 'react-redux'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { setQuery } from '../../store/features/Search.Slice'
+import { setVisibility } from '../../store/features/CatalogVisibility'
 
 export default function NavbarInputContainer() {
 
     const [value, setValue] = React.useState<string>('')
-    const [active, setActive] = React.useState(false)
+   
+    // const [active, setActive] = React.useState(false)
+    const { active }  = useAppSelector(state => state.catalogVisibility)
+
+    console.log('AAAXXX _SSSS');
+    const { query } = useAppSelector(state => state.searchReducer)
 
     const dispatch = useAppDispatch()
 
     let navigate = useNavigate()
-
-    const { query } = useAppSelector(state => state.searchReducer)
-
 
     const findBtnCSS = {
         display: 'flex',
@@ -32,6 +35,10 @@ export default function NavbarInputContainer() {
         width: 'auto',
         height: 'inherit',
         padding: '7px 30px 7px 30px',
+    }
+
+    function handleCatalogVisible (bool: boolean) {
+        dispatch(setVisibility(bool ));
     }
 
     function redirect() {
@@ -57,7 +64,7 @@ export default function NavbarInputContainer() {
     return (
         <div className={c.search__container}>
 
-            <button onClick={() => { setActive(true) }} className={c.category_btn}>
+            <button onClick={() => { handleCatalogVisible(true) }} className={c.category_btn}>
                 <p>Catalog</p>
                 <span className="material-symbols-outlined">
                     category
@@ -65,18 +72,17 @@ export default function NavbarInputContainer() {
             </button>
 
 
-            <DefaultModal closeBtn={<CloseBtn />} active={active} setVisible={setActive} portalId={'catalog-portal'}>
+            <DefaultModal closeBtn={<CloseBtn />} active={active} setVisible={handleCatalogVisible} portalId={'catalog-portal'}>
                 <Catalog></Catalog>
             </DefaultModal>
 
-
-
-
             <div className={c.input_container}>
                 <input type='text' onKeyDown={handleKeyDown} onChange={(e) => { setValue(e.target.value) }} className={c.search_input} placeholder='i am looking for...'></input>
-                {/* <button onClick={navigateBySearchItem} className={c.find__button}>Find</button> */}
 
-                <MainButton style={findBtnCSS} onClick={navigateBySearchItem}  >Find</MainButton>
+                <div className={c.find_btn_wrap} >
+                    <MainButton style={findBtnCSS} onClick={navigateBySearchItem}  >Find</MainButton>
+                </div>
+
 
             </div>
         </div>

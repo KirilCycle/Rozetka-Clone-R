@@ -2,6 +2,8 @@ import React from 'react'
 import InformationAboutCompanyList from '../InformationAboutCompanyList'
 import { Link } from 'react-router-dom'
 import c from './style/MenuContent.module.scss'
+import { setVisibility } from '../../store/features/CatalogVisibility'
+import { useAppDispatch } from '../../store/hooks'
 
 interface MenuContentBeta {
     closeFn: Function
@@ -9,7 +11,8 @@ interface MenuContentBeta {
 
 export default function MenuContentBeta({ closeFn }: MenuContentBeta) {
   
-
+    const dispatch = useAppDispatch()
+  
 
   return (
     <div className={c.menu_content}>
@@ -22,7 +25,7 @@ export default function MenuContentBeta({ closeFn }: MenuContentBeta) {
         <h2>Shop name</h2>
     </div>
 
-    <div className={c.menu__category}>
+    <div onClick={() => { dispatch(setVisibility(true))}} className={c.menu__category}>
         <span className="material-symbols-outlined">
             category
         </span>

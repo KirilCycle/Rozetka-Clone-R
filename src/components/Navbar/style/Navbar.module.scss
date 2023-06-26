@@ -76,24 +76,7 @@ $navbar-hgt: 50px;
             }
 
 
-            .find__button {
-                color: rgb(30, 30, 30);
-                display: flex;
-                font-weight: 500;
-                align-items: center;
-                width: auto;
-                height: 100%;
-                padding: 7px 30px 7px 30px;
-                background-color: $main_color;
-                border-top-right-radius: $border;
-                border-bottom-right-radius: $border;
-
-                &:hover {
-                    background-color: rgb(74, 228, 255);
-                    transition: 400ms;
-                }
-
-            }
+        
 
             .input_container {
                 display: flex;
@@ -129,11 +112,15 @@ $navbar-hgt: 50px;
             }
 
 
+            .find_btn_wrap {
+                width: max-content;
+                height: 100%;
+            }
 
 
             @media (max-width: 500px) {
 
-                .find__button {
+                .find_btn_wrap {
                     display: none;
                 }
 
@@ -213,6 +200,7 @@ $navbar-hgt: 50px;
             width: $navbar-hgt - 15;
             height: $navbar-hgt - 15;
             border-radius: 5px;
+            flex-shrink: 0;
             position: relative;
             left: 1vw;
 

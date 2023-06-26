@@ -22,7 +22,7 @@ export default function HorizontalBasket() {
 
     function handleRedirect() {
         navigate(`/checkout`)
-       
+
     }
 
     return (
@@ -52,7 +52,9 @@ export default function HorizontalBasket() {
                                 shopping_cart
                             </span>
                         </button>
-                        <ContentBtn onClick={handleRedirect}  style={{width:'50%', fontSize:'0.9rem'}}  >make an order</ContentBtn>
+                        <div className={c.make_an_order_btn_wrap} >
+                            <ContentBtn onClick={handleRedirect} style={{ fontSize: '0.9rem' }}  >make an order</ContentBtn>
+                        </div>
                     </div>
                 </div>
 

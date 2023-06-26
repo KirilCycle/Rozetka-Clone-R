@@ -13,11 +13,13 @@ import suggetsionsReducer from './features/Suggestions.SLice'
 import basketDataReducer from './features/BasketData'
 import basketDevcies from './features/BasketDevices'
 import searchReducer from './features/Search.Slice'
+import catalogVisibility from './features/CatalogVisibility'
 
 
 
 const rootReducer = combineReducers({
   typeReducer,
+  catalogVisibility,
   searchReducer,
   brandReducer,
   productReducer,

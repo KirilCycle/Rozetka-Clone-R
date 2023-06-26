@@ -21,23 +21,17 @@ export default function Catalog() {
     const { types } = useAppSelector(state => state.typeReducer)
     const [loading, setLoading] = React.useState(true)
 
-
-
     const dispatch = useAppDispatch()
-
-
 
     async function fetchAllTypes() {
 
         try {
             dispatch(fetchTypes())
             setLoading(false)
-
         } catch (e) {
 
         }
     }
-
 
     React.useEffect(() => {
         if (types.length < 1) {
@@ -46,8 +40,6 @@ export default function Catalog() {
             setLoading(false)
         }
     }, [])
-
-
 
     return (
         <>
