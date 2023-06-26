@@ -51,7 +51,7 @@ export default function MenuContentBeta({ closeFn }: MenuContentBeta) {
                 SUPPORT
             </a>
         </li>
-        <li>
+        <li  >
             <span className="material-symbols-outlined">
                 shopping_cart
             </span>

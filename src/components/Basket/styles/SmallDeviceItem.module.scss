@@ -10,6 +10,11 @@
     position: relative;
 
     .more_content {
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         display: flex;
         position: absolute;
         background-color: rgb(255, 255, 255);
@@ -43,7 +48,7 @@
         justify-content: center;
 
         span {
-            color: #3d40ff;
+            color: #969696;
             font-size: 2rem;
         }
     }
@@ -123,6 +128,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+         
+            /*
+              Introduced in Internet Explorer 10.
+              See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+            */
+            -ms-user-select: none;
+            user-select: none;
 
             .count {
                 display: flex;
@@ -136,15 +151,18 @@
                     color: rgb(30, 90, 255);
                     margin: 0px 10px 0px 10px;
                     cursor: pointer;
+                    margin-bottom: 8px;
                 }
 
                 input {
                     border: 1px solid rgb(177, 177, 177);
-                    border-radius: 3px;
-                    height: 30px;
+                    border-radius: 5px;
+                    height: 35px;
                     font-size: 1rem;
                     padding: 3px;
-                    width: 45px;
+                    width: 55px;
+
+                    
                 }
 
             }

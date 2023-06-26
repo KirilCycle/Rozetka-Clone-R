@@ -8,6 +8,7 @@ $navbar-hgt: 50px;
     justify-content: center;
     position: fixed;
     z-index: 100;
+    cursor: pointer;
     padding: 10px;
     height: auto;
 
@@ -237,6 +238,16 @@ $navbar-hgt: 50px;
             display: flex;
             justify-content: center;
             align-self: center;
+            transition: transform  100ms;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            &:active {
+                transform: scale(0.8);
+            }
 
 
             &:hover {

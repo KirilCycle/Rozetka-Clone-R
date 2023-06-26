@@ -5,6 +5,7 @@ import { ModifiedDeviceItem } from '../../store/features/BasketDevices'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import c from './styles/HorizontalBasket.module.scss'
 import HorizontalBasketImageContainer from './components/HorizontalBasketImage'
+import ContentBtn from '../../UI/buttons/ContentBtn'
 
 
 export default function HorizontalBasket() {
@@ -51,7 +52,7 @@ export default function HorizontalBasket() {
                                 shopping_cart
                             </span>
                         </button>
-                        <button onClick={handleRedirect} className={c.order_btn} >make an order</button>
+                        <ContentBtn onClick={handleRedirect}  style={{width:'50%', fontSize:'0.9rem'}}  >make an order</ContentBtn>
                     </div>
                 </div>
 

@@ -65,7 +65,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $second_color_light;
+    background-color: $second_color;
     color: white;
     cursor: pointer;
 
@@ -103,6 +103,7 @@
       display: flex;
       align-items: center;
       border-bottom: 1px solid $light_grey;
+      transition: all 0.2s;
       padding: 15px;
       cursor: pointer;
 
@@ -113,8 +114,7 @@
       &:hover {
         border-bottom: 1px solid rgba(255, 255, 255, 0.511);
         border-radius: 5px;
-        background-color: rgba(120, 165, 255, 0.301);
-        transition: all 0.2s;
+        background-color: rgba(202, 220, 255, 0.22);
       }
     }
   }

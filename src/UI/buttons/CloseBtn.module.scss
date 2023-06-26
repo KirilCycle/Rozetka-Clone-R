@@ -3,6 +3,11 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     width: 35px;
     height: 35px;
     position: absolute;

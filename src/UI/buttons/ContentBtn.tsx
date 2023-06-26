@@ -12,7 +12,7 @@ interface ContentBtnP {
 
 export default function ContentBtn({children, style, onClick}: ContentBtnP) {
   return (
-    <button onClick={onClick as MouseEventHandler<HTMLButtonElement>} className={c.btn} >{children}</button>
+    <button onClick={onClick as MouseEventHandler<HTMLButtonElement>} style={style} className={c.btn} >{children}</button>
   )
 }
 
