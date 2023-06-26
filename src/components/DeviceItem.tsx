@@ -11,6 +11,7 @@ import c from '../styles/DeviceItem.module.scss'
 import { count } from 'console'
 import { pushDeviceInfo } from '../store/features/BasketData'
 import uuid from 'react-uuid'
+import { setBasketVisibility } from '../store/features/BasketVisibility'
 
 interface DeviceItemProps {
     device: DeviceI,
@@ -39,11 +40,11 @@ export default function DeviceItem({ device, dispatch, handleBacketFn }: DeviceI
     }
 
 
-    function handleDevicebacket() {
+    function handleDevicebacket(atBasket?: boolean) {
 
         let currentBcket = JSON.parse(localStorage.getItem('basket') as string)
 
-
+        
 
         if (!Array.isArray(currentBcket)) {
 
@@ -140,12 +141,12 @@ export default function DeviceItem({ device, dispatch, handleBacketFn }: DeviceI
                         findSameDeviceInBasket() ?
 
                             <div className={c.basket_included}>
-                                <span onClick={handleDevicebacket} className="material-symbols-outlined">
+                                <span onClick={() =>  dispatch(setBasketVisibility(true)) } className="material-symbols-outlined">
                                     shopping_cart_checkout
                                 </span>
                             </div>
                             :
-                            <span onClick={handleDevicebacket} className="material-symbols-outlined">
+                            <span onClick={() => handleDevicebacket()} className="material-symbols-outlined">
                                 shopping_cart
                             </span>
 

@@ -12,7 +12,7 @@ const basketVisibility = createSlice({
     name: 'basketVisibility',
     initialState,
     reducers: {
-        setVisibility(state, action: PayloadAction<boolean>) {
+        setBasketVisibility(state, action: PayloadAction<boolean>) {
             state.active = action.payload
         },
     },
@@ -21,7 +21,7 @@ const basketVisibility = createSlice({
 export default basketVisibility.reducer
 
 export const {
-    setVisibility,
+    setBasketVisibility,
 } = basketVisibility.actions
 
 

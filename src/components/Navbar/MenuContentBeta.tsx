@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import c from './style/MenuContent.module.scss'
 import { setVisibility } from '../../store/features/CatalogVisibility'
 import { useAppDispatch } from '../../store/hooks'
+import { setBasketVisibility } from '../../store/features/BasketVisibility'
 
 interface MenuContentBeta {
     closeFn: Function
@@ -12,6 +13,11 @@ interface MenuContentBeta {
 export default function MenuContentBeta({ closeFn }: MenuContentBeta) {
 
     const dispatch = useAppDispatch()
+
+    function closeMenu(e : any ,execute : any) {
+        closeFn(e)
+        execute()
+    }
 
 
     return (
@@ -25,10 +31,8 @@ export default function MenuContentBeta({ closeFn }: MenuContentBeta) {
                 <h2>Shop name</h2>
             </div>
 
-            <div onClick={(e) => {
-                dispatch(setVisibility(true))
-                closeFn(e)
-            }} className={c.menu__category}>
+            <div onClick={(e) => closeMenu(e,  dispatch(setVisibility(true)) ) }
+               className={c.menu__category}>
                 <span className="material-symbols-outlined">
                     category
                 </span>
@@ -57,7 +61,7 @@ export default function MenuContentBeta({ closeFn }: MenuContentBeta) {
                         SUPPORT
                     </a>
                 </li>
-                <li  >
+                <li onClick={(e) => closeMenu(e,dispatch(setBasketVisibility(true)) )}>
                     <span className="material-symbols-outlined">
                         shopping_cart
                     </span>

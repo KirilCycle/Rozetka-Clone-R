@@ -6,7 +6,7 @@ import DefaultModal from '../../UI/modals/ConditionalRenderModal';
 import Basket from '../Basket/Basket';
 import CloseBtn from '../../UI/buttons/CloseBtn';
 import DisplatHandleModal from '../../UI/modals/DisplayHandleModal';
-import { setVisibility } from '../../store/features/BasketVisibility';
+import { setBasketVisibility } from '../../store/features/BasketVisibility';
 
 export default function TopNavbarBasket() {
 
@@ -18,7 +18,7 @@ export default function TopNavbarBasket() {
     const dispatch = useAppDispatch()
 
      function handleStoreModalsVisible (bool: boolean) {
-        dispatch(  setVisibility(bool));
+        dispatch(  setBasketVisibility(bool));
     }
     
     const [domSetted, setDom] = React.useState(false)

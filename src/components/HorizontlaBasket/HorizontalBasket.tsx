@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { handleBasket } from '../../store/features/Basket.Slice'
 import { ModifiedDeviceItem } from '../../store/features/BasketDevices'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import c from './styles/HorizontalBasket.module.scss'
 import HorizontalBasketImageContainer from './components/HorizontalBasketImage'
 import ContentBtn from '../../UI/buttons/ContentBtn'
+import { setBasketVisibility } from '../../store/features/BasketVisibility'
 
 
 export default function HorizontalBasket() {
@@ -46,7 +46,7 @@ export default function HorizontalBasket() {
                         }
                     </div>
                     <div className={c.link_container}>
-                        <button className={c.basket_btn} onClick={() => { dispatch(handleBasket()) }}>
+                        <button className={c.basket_btn} onClick={() => { dispatch(setBasketVisibility(true)) }}>
                             Open Basket
                             <span className="material-symbols-outlined">
                                 shopping_cart

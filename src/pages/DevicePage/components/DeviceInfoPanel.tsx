@@ -7,19 +7,18 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks'
 import c from '../styles/DevicePage.module.scss'
 import { pushDeviceInfo } from '../../../store/features/BasketData'
 import uuid from 'react-uuid'
-import MainButton from '../../../UI/buttons/MainButton'
-
+import { setBasketVisibility } from '../../../store/features/BasketVisibility'
 
 interface DeviceInfoPanelProps {
     device: DeviceI
 
 }
-
 export default function DeviceInfoPanel({ device }: DeviceInfoPanelProps) {
 
 
     const { currentColor, setCurrentColor } = React.useContext(SelectedSubPageContext)
     const { selected } = React.useContext(SelectedSubPageContext)
+    
     const { reload } = useAppSelector(state => state.basketStateSlice)
     const parsedBasket = JSON.parse(localStorage.getItem('basket') as string)
     const [currentBasket, setCurrentBasket] = React.useState<basketItem[]>([])
@@ -123,14 +122,12 @@ export default function DeviceInfoPanel({ device }: DeviceInfoPanelProps) {
                     }
 
                     <div className={c.order__buttons}>
-
-
-                    
-
-
                         <button>Buy</button>
-                       
-                        <button onClick={handleBasketButton} className={findSameBasketItem() ? c.basket__button__active : c.basket__button}>
+
+
+
+
+                        <button onClick={findSameBasketItem() ? () => dispatch(setBasketVisibility(true)) : handleBasketButton} className={findSameBasketItem() ? c.basket__button__active : c.basket__button}>
                             {findSameBasketItem() ? "In basket" : "Put in basket"}
                             <span className="material-symbols-outlined">
                                 shopping_cart
