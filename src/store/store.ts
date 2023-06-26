@@ -14,11 +14,12 @@ import basketDataReducer from './features/BasketData'
 import basketDevcies from './features/BasketDevices'
 import searchReducer from './features/Search.Slice'
 import catalogVisibility from './features/CatalogVisibility'
-
+import basketVisibility from './features/BasketVisibility';
 
 
 const rootReducer = combineReducers({
   typeReducer,
+  basketVisibility,
   catalogVisibility,
   searchReducer,
   brandReducer,

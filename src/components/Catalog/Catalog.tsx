@@ -17,7 +17,6 @@ interface CatalogProps {
 
 export default function Catalog() {
 
-
     const { types } = useAppSelector(state => state.typeReducer)
     const [loading, setLoading] = React.useState(true)
 

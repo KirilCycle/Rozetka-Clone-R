@@ -19,8 +19,6 @@ export default function NavbarInputContainer() {
    
     // const [active, setActive] = React.useState(false)
     const { active }  = useAppSelector(state => state.catalogVisibility)
-
-    console.log('AAAXXX _SSSS');
     const { query } = useAppSelector(state => state.searchReducer)
 
     const dispatch = useAppDispatch()
