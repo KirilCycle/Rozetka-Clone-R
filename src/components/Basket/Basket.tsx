@@ -1,13 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { basketItem } from '../../models/models'
-import { handleBasket } from '../../store/features/Basket.Slice'
 import { setStartDevicesInfo } from '../../store/features/BasketData'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import c from './styles/Basket.module.scss'
 import BacketList from './components/BasketList'
-import { handleClickonParent } from '../../utils/handleClickonParent'
 import MainButton from '../../UI/buttons/MainButton'
+import { setBasketVisibility } from '../../store/features/BasketVisibility'
 
 export default function Basket() {
 
@@ -26,7 +25,7 @@ export default function Basket() {
   function handleRedirect() {
     localStorage.setItem('basketData', JSON.stringify(devicesIdCounts))
     navigate(`/checkout`)
-    dispatch(handleBasket())
+    dispatch(setBasketVisibility(false))
   }
 
   React.useEffect(() => {

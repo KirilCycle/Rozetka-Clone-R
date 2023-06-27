@@ -30,22 +30,13 @@ function App() {
    return (
       <BrowserRouter>
          <div className='app-wrap'>
-
-
-
             <MobileSortActive.Provider value={{ active, handleMenuState }} >
-
-
 
                <div id='catalog-portal'></div>
                <div id='menu-portal'></div>
                <div id='portal-basket' ></div>
               
-
                <TopNavbar />
-
-           
-
 
                <LeftMobileFilter />
 
