@@ -35,7 +35,7 @@ const basketDataSlice = createSlice({
 
             for (let i = 0; i < state.devicesIdCounts.length; i++) {
 
-                console.log(state.devicesIdCounts[i], action.payload, 'OUR SITUATION');
+              
 
                 if (state.devicesIdCounts[i].innerId == action.payload.innerId) {
 

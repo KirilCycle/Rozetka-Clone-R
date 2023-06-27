@@ -8,7 +8,7 @@ import './index.css';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
-
+document.cookie = 'cookieName=cookieValue; SameSite=None; Secure';
 
 
 if (localStorage.getItem('basket') == null || localStorage.getItem('basket') == ' ' || localStorage.getItem('basket') == '') { 

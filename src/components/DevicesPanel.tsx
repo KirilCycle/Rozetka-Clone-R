@@ -66,7 +66,6 @@ export default function DevicePanel() {
 
 
     console.log('MAIN RENDER', reload);
-
     return (
         <div className={c.wrap}>
             {error ? <h2>{error as string}</h2> : null}

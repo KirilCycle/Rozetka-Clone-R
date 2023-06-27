@@ -74,9 +74,6 @@ export default function DeviceInfoPanel({ device }: DeviceInfoPanelProps) {
         return false
     }
 
-    console.log(currentBasket, 'BASKEt')
-
-
     return (
 
         <div className={c.info__panel}>

@@ -21,18 +21,10 @@ import TopNavbar from './components/Navbar/TopNavbar';
 
 function App() {
 
-   const [menuActive, setMenuActive] = React.useState<boolean>(false)
-
    const [active, setActive] = React.useState<boolean>(false)
-
-   const [catalogVisible, setCatalogVisible] = React.useState<boolean>(false)
 
    function handleMenuState() {
       setActive(active => !active)
-   }
-
-   function menuHandle() {
-      setMenuActive(prev => !prev)
    }
 
    return (

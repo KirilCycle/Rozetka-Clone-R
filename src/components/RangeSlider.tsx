@@ -92,7 +92,7 @@ export default function RangeSlider({ maxSum, defaultSum }: RangeSliderProps) {
 
     const onMouseUp = (event: MouseEvent) => {
       cords.current.lastX = slider.offsetLeft;
-      console.log('d')
+      
       isClicked.current = false
 
 

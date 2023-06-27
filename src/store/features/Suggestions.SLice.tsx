@@ -32,7 +32,7 @@ export const fetchSuggestion = createAsyncThunk('suggetsions/fetchSuggestion',
         try {
             const response = await axios.get(`${SERVER_URL}suggestion?_page=${1}&_limit=4`)
 
-            console.log('MAIN DATA REQUEST SUGGESTION')
+         
             return response.data
 
         } catch (e) {
@@ -51,7 +51,7 @@ export const fetchSuggestionNext = createAsyncThunk('suggetsions/fetchSuggestion
         try {
             const response = await axios.get(`${SERVER_URL}suggestion?_page=${page}&_limit=4`)
 
-            console.log('ADDITION DATA TO MAIN ARRAY',response.data)
+        
             return response.data
 
         } catch (e) {

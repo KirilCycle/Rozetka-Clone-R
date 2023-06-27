@@ -29,7 +29,7 @@ export default function CategoryLeftBar({ visible, handleCategory }: CategoryLef
     }
   }, [])
 
-  console.log('CategoryLeftBar RENDER !!!!', types)
+
 
 
 

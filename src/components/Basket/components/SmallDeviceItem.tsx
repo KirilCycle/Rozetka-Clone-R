@@ -41,7 +41,7 @@ export default function SmallDeviceItem({ device, currentInnerID, color }: Small
         // (number - 1) as we already have price copy, it was setted by useEffect in current component
         let totalSumFromDeleteDevice = device.price * (number - 1)
 
-        console.log(totalSumFromDeleteDevice, 'AAAAA')
+   
 
         dispatch(addToTotalSum(-totalSumFromDeleteDevice))
 

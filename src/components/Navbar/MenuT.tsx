@@ -15,7 +15,6 @@ export default function MenuT({ v, set }: MenuInterface) {
   const menuWrapRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    console.log(menuContentRef.current);
     setTimeout(() => {
     menuContentRef.current!.style.transform = 'translateX(0%)'
     menuWrapRef.current!.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'

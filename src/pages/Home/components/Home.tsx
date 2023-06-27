@@ -12,7 +12,7 @@ interface HandleCategoryProps {
 
 export default function Home({ handleCategory }: HandleCategoryProps) {
 
-  console.log('HOME CONTENT RENDER (AS ALL RIGHT )');
+
 
   const categoryBtnCss = {
     width: '100%',
@@ -29,6 +29,7 @@ export default function Home({ handleCategory }: HandleCategoryProps) {
   }
 
   return (
+  
     <div className={c.home_container}>
 
       <HorizontalBasket />

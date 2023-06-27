@@ -6,7 +6,6 @@ import c from '../styles/DevicesComponents.module.scss'
 
 export default function ComponentsCategory() {
 
-  console.log('ComponentsCategory render')
 
   return (
     <div className={c.wrap}>

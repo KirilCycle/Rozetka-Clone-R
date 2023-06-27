@@ -44,9 +44,7 @@ export default function BrandsCheckList() {
 
         //fetch brands which alow this category => phone/apple / samsung / ...
 
-        console.log(typeByCurrentUrl,'ENOMY')
-
-        takeType(typeByCurrentUrl).then(res => setList(res.brands)).then(res => console.log(res))
+        takeType(typeByCurrentUrl).then(res => setList(res.brands))
 
     }, [typeByCurrentUrl])
 

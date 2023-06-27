@@ -17,7 +17,7 @@ export default function SuggestionDevicesContent() {
 
     const dispatch = useAppDispatch()
 
-    console.log('SUGGESTION DEVICE RENDER');
+ 
 
     React.useEffect(() => {
 

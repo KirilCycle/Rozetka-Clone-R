@@ -26,9 +26,6 @@ export default function DiscountDevices() {
     const [loading, setLoading] = React.useState<boolean>(false)
     const [error, setError] = React.useState<string | null>(null)
 
-    
-    console.log('XXXXXXXXXXXXXXXXxx');
-
     async function fethcDesDevices() {
 
         try {

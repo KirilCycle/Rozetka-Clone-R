@@ -52,7 +52,7 @@ export default function CountInput({ defaultVal, changeValueState, devicePrice, 
 
             dispatch(addToTotalSum(number * devicePrice))
 
-            console.log(totalSumFromDeleteDevice, 'AAAAA')
+         
 
 
             dispatch(setCurrentCountAtDevicesInfo({ count: number, innerId, }))

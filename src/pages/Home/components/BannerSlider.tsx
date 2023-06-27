@@ -18,7 +18,7 @@ export default function BannerSlider() {
 
     function handleImageLoad (event: React.SyntheticEvent<HTMLImageElement>) {
         const { naturalHeight } = event.currentTarget;
-        console.log(naturalHeight, 'WOWWWWW');
+
     }
 
     return (

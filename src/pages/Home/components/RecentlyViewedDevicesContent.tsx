@@ -27,7 +27,7 @@ export default function RecentlyViewedDevicesContent() {
   const [loading, setLoading] = React.useState<boolean>(true)
   const { viewedDevices } = useAppSelector(state => state.viewedReducer)
 
-  console.log('VIEWED DEVICES RENDER');
+
     
   const dispatch = useAppDispatch()
 
@@ -43,8 +43,7 @@ export default function RecentlyViewedDevicesContent() {
 
           fetchDevice(recentlyViewed[i]).then(res => {
 
-            console.log('VIEWED DEVICES FECTH')
-            let device: DeviceI = res as DeviceI
+           let device: DeviceI = res as DeviceI
 
             if (device.images && device.id && device.colors && device.price) {
 

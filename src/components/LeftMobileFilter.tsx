@@ -16,7 +16,6 @@ export default function LeftMobileFilter() {
 
     const { defaultMaxPrice, defaultminPrice, maxPrice, minPrice } = useAppSelector(state => state.rangeReducer)
 
-    console.log('left mobile filter RENDER ')
 
     return (
         <div onClick={(e) => handleClickonParent(e, menuState.handleMenuState)} className={menuState?.active ? c.menu_active : c.menu}>

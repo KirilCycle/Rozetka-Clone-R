@@ -8,7 +8,7 @@ import TopNavbarBasket from './TopBasketItem'
 
 export default function TopNavbar() {
 
-    console.log('NAVBAR render')
+
     const containerRef = React.useRef<HTMLDivElement>(null)
     
    

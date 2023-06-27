@@ -16,7 +16,7 @@ export default function HorizontalBasket() {
 
     const { devicesFromBasket } = useAppSelector(state => state.basketDevcies)
 
-    console.log(devicesFromBasket, 'FROM HORIZONTAL');
+
 
     const dispatch = useAppDispatch()
 

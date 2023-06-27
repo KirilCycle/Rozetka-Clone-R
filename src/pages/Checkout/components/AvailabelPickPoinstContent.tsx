@@ -39,7 +39,7 @@ export default function AvailabelPickPoinstContent({ pointChain }: AvailabelPick
 
             setPoints(res.data as PointInterface[])
 
-            console.log(res.data);
+           
 
             setLoadig(false)
 

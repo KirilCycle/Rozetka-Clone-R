@@ -8,7 +8,7 @@ export default function HomePage() {
   const [leftCategoryVisible, setLeftCategoryVisible] = React.useState<boolean>(false)
 
   //React.Dispatch<React.SetStateAction<string>
-  console.log('WHOLE HOME PAGE RENDER');
+
 
   return (
     <div className={c.wrap}>

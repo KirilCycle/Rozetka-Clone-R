@@ -18,10 +18,6 @@ export default function SubPages({ currentImgs, device }: SubPageProps) {
 
     const { selected } = React.useContext(SelectedSubPageContext)
 
-    console.log('sub page rendered')
-
-
-
     switch (selected) {
         case 'characteristics':
             return (

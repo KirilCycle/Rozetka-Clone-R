@@ -10,7 +10,7 @@ export default function MenuHandleButton() {
     const [v, setV] = React.useState(false)
 
     function menuHandle() {
-        console.log('BAD');
+
         setV(!v)
     }
 

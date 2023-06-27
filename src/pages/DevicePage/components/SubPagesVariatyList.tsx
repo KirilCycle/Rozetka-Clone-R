@@ -6,7 +6,6 @@ import c from '../styles/DevicePage.module.scss'
 
 export default React.memo(function SubPagesVariatyList() {
 
-    console.log('sub page list render ')
 
     const dispatch= useAppDispatch()
 

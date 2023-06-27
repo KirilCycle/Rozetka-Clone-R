@@ -10,13 +10,9 @@ import c from '../styles/CategoryHeader.module.scss'
 
 export default function CategoryHeader() {
 
-   console.log( 'CATEGORY HEADRE RENDR');
-
-
    const location = useLocation()
    const takeCurrentType  = location.pathname.replaceAll('/', '')
 
-   console.log(takeCurrentType, 'HEADER REFRESH');
 
     const [categoryObject, setCategoryObject] = React.useState<Types | null>(null)
     const [error, setError] = React.useState<string | null>(null)

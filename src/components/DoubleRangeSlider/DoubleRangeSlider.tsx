@@ -203,7 +203,7 @@ export default React.memo( function DoubleRangeSlider({ maxSum, startSum, endSum
 
     function handleStroePrice() {
         
-        console.log(currentMaxSum, currentMinSum, 'ASSSS')
+    
         
 
         dispatch(setMaxRangePrice(currentMaxSum))

@@ -23,10 +23,6 @@ export default function OrderPage() {
       setRes(devicesFromBasket)
    
 
-
-    console.log(devicesIdCounts);
-    console.log(devicesFromBasket, 'ORDER LIST PROUD')
-
   }, [totalSum, devicesFromBasket])
 
 

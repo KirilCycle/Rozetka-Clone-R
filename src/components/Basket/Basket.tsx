@@ -29,8 +29,6 @@ export default function Basket() {
     dispatch(handleBasket())
   }
 
-  console.log('BASKET RENDER')
-
   React.useEffect(() => {
     dispatch(setStartDevicesInfo(devicesId))
 

@@ -5,12 +5,11 @@ $navbar-hgt: 50px;
     width: 100%;
     background-color: $dark_grey;
     display: flex;
+    padding: 10px;
     justify-content: center;
     position: fixed;
     z-index: 100;
     cursor: pointer;
-    padding: 10px;
-    height: auto;
 
     .top_navbar {
         width: 100%;

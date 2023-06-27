@@ -21,19 +21,16 @@ export default function SuggestionDevices() {
 
 });
 
-const [v, setV] = useState(false);
+
 const [isComponentLoaded, setComponentLoaded] = React.useState(false);
 
 useEffect(() => {
    if (inView) {
-       setV(inView)
        handleClick();
    }
 }, [inView]);
 
-useEffect(() => {
-    console.log(v);
-}, [v]);
+
 
 
 const handleClick = () => {
