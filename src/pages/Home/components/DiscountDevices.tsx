@@ -11,24 +11,18 @@ export default function DiscountDevices() {
 
     });
 
-    const [v, setV] = useState(false);
+
     const [isComponentLoaded, setComponentLoaded] = React.useState(false);
 
     useEffect(() => {
        if (inView) {
-           setV(inView)
-           handleClick();
+           setComponentLoaded(true);
        }
     }, [inView]);
 
-    useEffect(() => {
-        console.log(v);
-    }, [v]);
 
 
-    const handleClick = () => {
-        setComponentLoaded(true);
-      };
+
 
     return (
         <>
