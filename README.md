@@ -1,4 +1,4 @@
-# Rozetka-Clone-R
+# Rozetka-Clone-Updated
 
 npm start and npm run server 
 
